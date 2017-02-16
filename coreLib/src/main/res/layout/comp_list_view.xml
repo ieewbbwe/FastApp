@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.bingoogolapple.refreshlayout.BGARefreshLayout
+    android:id="@+id/comp_refresh_bga_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/comp_data_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"/>
+</cn.bingoogolapple.refreshlayout.BGARefreshLayout>

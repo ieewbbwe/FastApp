@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">core</string>
+    <string name="hint_search_bar">请输入关键字</string>
+    <string name="loading_net">加载中,请稍候...</string>
+    <string name="account_tip">提示</string>
+    <string name="button_ok">确定</string>
+    <string name="msg_camera_framework_bug">对不起，您的摄像头不支持扫描，请手动输入！</string>
+    <string name="label_last_view">没有更多的数据</string>
+    <string name="label_load_more">Loading...</string>
+    <string name="label_take_photo">拍照</string>
+    <string name="label_chose_form_album">从相册中选</string>
+    <string name="label_cancel">取消</string>
+    <string name="button_cancel">取消</string>
+
+    <!-- Error View -->
+    <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+    <string name="error_view_no_data">暂无内容</string>
+    <string name="error_view_loading">加载中…</string>
+    <string name="error_view_load_error_click_to_refresh">内容加载失败\r\n点击重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <string name="tip_network_error">没有可用的网络</string>
+    <string name="label_loading">加载中...</string>
+    <string name="button_comfirm">确认</string>
+</resources>

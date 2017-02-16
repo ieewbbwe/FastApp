@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.android.support:design:$rootProject.ext.designVersion"
+    /*网络请求库*/
+    compile "org.apache.httpcomponents:httpmime:$rootProject.ext.httpMimeVersion"
+    compile "com.squareup.okhttp:okhttp:$rootProject.ext.okHttpVersion"
+    compile "com.squareup.okio:okio:$rootProject.ext.okIoVersion"
+    compile "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+    /*数据库操作库*/
+    compile "com.j256.ormlite:ormlite-android:$rootProject.ext.ormlitVersion"
+    compile "com.j256.ormlite:ormlite-core:$rootProject.ext.ormlitVersion"
+    /* 列表加载控件的依赖库 */
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.recyclerViewVersion"
+    compile "com.nineoldandroids:library:$rootProject.ext.ninenoVersion"
+    /*compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'*/
+     compile project(':LRecyclerview_library')
+    /*compile "com.github.jdsjlzx:LRecyclerView:$rootProject.ext.recyclerVersion"*/
+    /*6.0 权限库*/
+    compile "com.yanzhenjie:permission:$rootProject.ext.premissionVersion"
+    /*RxJava*/
+    compile "io.reactivex:rxjava:$rootProject.ext.rxJavaVersion"
+    compile "io.reactivex:rxandroid:$rootProject.ext.rxJavaVersion"
+    /*RxLife*/
+    compile "com.trello:rxlifecycle:$rootProject.ext.rxLifeVersion"
+    compile "com.trello:rxlifecycle-components:$rootProject.ext.rxLifeVersion"
+    /*图片加载库*/
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    /*图片样式装换库*/
+    /* compile 'jp.wasabeef:glide-transformations:2.0.1'*/
+    /*compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'*/
+
+}

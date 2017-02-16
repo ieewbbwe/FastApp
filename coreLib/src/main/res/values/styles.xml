@@ -1,0 +1,49 @@
+<resources>
+<!--
+    &lt;!&ndash; Base application theme. &ndash;&gt;
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>-->
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <!-- Used for the background -->
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="MyBorderLessStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/widget_button_borderless</item>
+    </style>
+
+    <style name="Genius.Widget.Loading" parent="">
+        <item name="gBackgroundLineSize">@dimen/g_loading_lineSize</item>
+        <item name="gForegroundLineSize">@dimen/g_loading_lineSize</item>
+
+        <item name="gBackgroundColor">@color/g_default_loading_bg</item>
+        <item name="gForegroundColor">@array/g_default_loading_fg</item>
+
+        <item name="gLineStyle">circle</item>
+        <item name="gAutoRun">true</item>
+    </style>
+
+    <style name="dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+
+</resources>
