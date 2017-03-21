@@ -14,6 +14,7 @@ import java.util.List;
 
 
 /**
+ * Create By mxh on 2016/11/12
  * 封装Adapter
  *
  * @param <T> 数据类型
