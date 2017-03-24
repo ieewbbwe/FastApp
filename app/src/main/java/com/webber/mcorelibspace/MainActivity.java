@@ -21,7 +21,6 @@ import com.github.jdsjlzx.interfaces.OnLoadMoreListener;
 import com.github.jdsjlzx.interfaces.OnRefreshListener;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
-import com.webber.mcorelibspace.dataBinding.DataBindingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +52,6 @@ public class MainActivity extends NActivity {
         });
     }
 
-    public void dataBindClick(View v) {
-        pushActivity(DataBindingActivity.class);
-    }
 
     class DataAdapter extends ListBaseAdapter<String, DataAdapter.ViewHolder> {
         public DataAdapter(Context context) {

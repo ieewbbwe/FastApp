@@ -60,7 +60,7 @@ public class LoopPagerAdapter extends BasicPageAdapter<IBanner> {
         ImageView imageView = (ImageView) view.findViewById(R.id.header_imageview);
         //imageView.setImageResource(R.mipmap.img_item_default);
         //Lg.print("andy", "广告图地址:" + list.get(position).getImageUrl());
-        ImageLoadFactory.getInstance().getImageLoadHandler().displayImage(R.mipmap.banner, imageView);
+        ImageLoadFactory.getInstance().getImageLoadHandler().displayImage(R.mipmap.img_item_default, imageView);
         container.addView(view);
         return view;
     }

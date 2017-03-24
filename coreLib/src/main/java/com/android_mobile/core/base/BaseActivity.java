@@ -20,7 +20,7 @@ public abstract class BaseActivity extends BasicActivity {
 	private int modalAnimTime = 300;
 
 	public void pushModalComponent(BaseComponent bc, int widthDip) {
-		if (bc.isDisplay() == true)
+		if (bc.isDisplay())
 			return;
 		bc.getRoot().setVisibility(View.VISIBLE);
 		bc.setOffset(widthDip);
