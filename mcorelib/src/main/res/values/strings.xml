@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MCoreLib</string>
+    <string name="label_loading">加载中</string>
+    <string name="label_network_unavailable">网络不可用</string>
+</resources>

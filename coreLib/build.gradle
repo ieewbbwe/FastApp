@@ -33,8 +33,8 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$rootProject.ext.recyclerViewVersion"
     compile "com.nineoldandroids:library:$rootProject.ext.ninenoVersion"
     /*compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'*/
-     compile project(':LRecyclerview_library')
-    /*compile "com.github.jdsjlzx:LRecyclerView:$rootProject.ext.recyclerVersion"*/
+    /* compile project(':LRecyclerview_library')*/
+    compile "com.github.jdsjlzx:LRecyclerView:$rootProject.ext.LRecyclerVersion"
     /*6.0 权限库*/
     compile "com.yanzhenjie:permission:$rootProject.ext.premissionVersion"
     /*RxJava*/
@@ -48,5 +48,6 @@ dependencies {
     /*图片样式装换库*/
     /* compile 'jp.wasabeef:glide-transformations:2.0.1'*/
     /*compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'*/
+
 
 }

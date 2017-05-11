@@ -15,6 +15,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -22,29 +23,35 @@ allprojects {
 ext {
     // Sdk and tools
     minSdkVersion = 15
-    targetSdkVersion = 24
-    compileSdkVersion = 24
-    buildToolsVersion = '25.0.0'
+    targetSdkVersion = 25
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.2'
 
     // App dependencies
     supportLibraryVersion = '24.2.0'
-    recyclerViewVersion = "25.1.1"
-    designVersion = "25.1.1"
-    appcompatV7Version = "25.1.1"
+    recyclerViewVersion = "25.3.1"
+    designVersion = "25.3.1"
+    appcompatV7Version = "25.3.1"
 
     //net lib
     okHttpVersion = "2.7.5"
     okIoVersion = "1.9.0"
     httpMimeVersion = "4.2.1"
     gsonVersion = "2.4"
+    retrofitConvertVersion = "2.2.0"
+    retrofitVersion = "2.2.0"
     //database lib
     ormlitVersion = "5.0"
     ninenoVersion = "2.4.0"
-    recyclerVersion = "1.3.5"
+    LRecyclerVersion = "1.4.3"
     premissionVersion = "1.0.3"
-    rxJavaVersion = "2.0.2"
+    //Rx Lib
     rxJavaVersion = "1.1.0"
+    rxJavaAdapterVersion = "2.0.2"
+    rxAndroidVersion = "1.1.0"
     rxLifeVersion = "0.3.1"
+    rxBindingVersion = "0.4.0"
+    retrofitLogVersion = "3.3.1"
     glideVersion = "3.7.0"
 }
 
