@@ -1,6 +1,7 @@
 package com.android_mobile.core;
 
 import android.annotation.SuppressLint;
+import android.app.Application;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -35,7 +36,7 @@ public abstract class BasicFragment extends RxFragment implements
         IBasicAsyncTaskFinish, IBasicCoreMethod {
     public View v;
     public BasicActivity activity;
-    public BasicApplication application;
+    public Application application;
     protected boolean asyncWithProgress = true;
     protected NavigationBar navigationBar = null;
     private Stack<BasicAsyncTask> tasks = new Stack<BasicAsyncTask>();
@@ -53,7 +54,7 @@ public abstract class BasicFragment extends RxFragment implements
         printLog();
         v = inflater.inflate(create(), container, false);
         activity = (BasicActivity) getActivity();
-        application = (BasicApplication) activity.getApplication();
+        application = activity.getApplication();
         navigationBar = activity.navigationBar;
         activity.updateSkin(BasicActivity.skinColor);
         init();

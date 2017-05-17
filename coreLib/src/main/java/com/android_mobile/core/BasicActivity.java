@@ -7,6 +7,7 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -82,7 +83,7 @@ public abstract class BasicActivity extends RxAppCompatActivity
     private DisplayMetrics metrics;
     private InputMethodManager imm;
     private ActivityManager activityManager;
-    private BasicApplication application;
+    private Application application;
     private Handler h;
     private FragmentManager fm;
     public LayoutInflater inflater;
@@ -123,7 +124,7 @@ public abstract class BasicActivity extends RxAppCompatActivity
         STATUS_BAR_HEIGHT = getStatusBarHeightForReflect();
         imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         activityManager = (ActivityManager) getSystemService(Activity.ACTIVITY_SERVICE);
-        application = (BasicApplication) this.getApplication();
+        application = this.getApplication();
         h = new Handler();
         BasicApplication.activityStack.add(this);
         fm = getSupportFragmentManager();
