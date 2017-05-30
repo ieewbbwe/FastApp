@@ -19,19 +19,16 @@ public abstract class OnProgressRequestCallback<T extends Response> extends OnSi
 
     @Override
     public void onStart() {
-        //mContext.displayProgressBar();
         super.onStart();
     }
 
     @Override
     public void onCompleted() {
-        //mContext.hiddenProgressBar();
         super.onCompleted();
     }
 
     @Override
     public void onFinish() {
-        //mContext.hiddenProgressBar();
         Lg.print("network", "onFinish");
     }
 }
