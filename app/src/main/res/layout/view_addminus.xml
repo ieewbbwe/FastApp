@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mimus_dis_tv"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/minus_dis_selector_disfouce"
+            android:padding="2dp"
+            android:scaleType="center"
+            android:src="@mipmap/ic_ctn_minus_normal"/>
+
+        <EditText
+            android:id="@+id/number_dis_tv"
+            android:layout_width="50dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginRight="-2dp"
+            android:layout_toRightOf="@id/mimus_dis_tv"
+            android:background="@drawable/preferential_number_shap"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:numeric="integer"
+            android:text="1"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/add_dis_tv"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/number_dis_tv"
+            android:background="@drawable/add_dis_selector"
+            android:padding="2dp"
+            android:scaleType="center"
+            android:src="@mipmap/ic_ctn_plus_normal"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/error_msg_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="庫存僅剩99件"
+        android:textColor="@color/text_error_red"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+</LinearLayout>

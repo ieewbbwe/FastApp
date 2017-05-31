@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class MainActivity extends NActivity {
     private DataAdapter mDataAdapter;
     private List<String> strings;
     private ListView mListLv;
+    private EditText mTestEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class MainActivity extends NActivity {
                         .setAction("Action", null).show();
             }
         });
+
     }
 
 
@@ -173,7 +176,6 @@ public class MainActivity extends NActivity {
                     e.printStackTrace();
                 }
                 mDataAdapter.addAll(strings);
-                mListRv.loadMoreComplete();
             }
         });
     }
