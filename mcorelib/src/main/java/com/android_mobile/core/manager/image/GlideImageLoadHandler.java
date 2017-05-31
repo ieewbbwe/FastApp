@@ -1,4 +1,4 @@
-package com.android_mobile.core.manager;
+package com.android_mobile.core.manager.image;
 
 import android.content.Context;
 import android.net.Uri;

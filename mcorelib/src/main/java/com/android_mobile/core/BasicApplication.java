@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import com.android_mobile.core.manager.ImageLoadFactory;
+import com.android_mobile.core.app.UncaughtException;
+import com.android_mobile.core.manager.image.ImageLoadFactory;
 import com.android_mobile.core.manager.SharedPrefManager;
 
 import java.util.Stack;
@@ -26,6 +27,7 @@ public class BasicApplication extends Application {
         applicationContext = getApplicationContext();
         SharedPrefManager.init(applicationContext);
         ImageLoadFactory.init(applicationContext);
+        Thread.setDefaultUncaughtExceptionHandler(UncaughtException.getInstance(applicationContext));
     }
 
 

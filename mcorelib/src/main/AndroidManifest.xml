@@ -5,7 +5,7 @@
     <application
         android:supportsRtl="true">
         <meta-data
-            android:name="com.android_mobile.core.manager.GlideModelConfig"
+            android:name="com.android_mobile.core.manager.image.GlideModelConfig"
             android:value="GlideModule"/>
     </application>
 

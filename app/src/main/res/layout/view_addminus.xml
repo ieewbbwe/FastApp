@@ -33,7 +33,6 @@
             android:imeOptions="actionDone"
             android:numeric="integer"
             android:text="1"
-            android:textColor="@color/text_color"
             android:textSize="14sp"/>
 
         <ImageView

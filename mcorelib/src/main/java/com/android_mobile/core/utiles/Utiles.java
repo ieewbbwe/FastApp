@@ -1,7 +1,11 @@
 package com.android_mobile.core.utiles;
 
 import android.content.Context;
-import android.util.DisplayMetrics;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Environment;
 
 /**
  * Created by mxh on 2017/5/30.
@@ -21,9 +25,52 @@ public class Utiles {
     /**
      * px转换为dip
      */
-    public static int px2dip(Context context,float pxValue) {
+    public static int px2dip(Context context, float pxValue) {
         float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
+    }
+
+    /**
+     * 检查SDCard挂载情况
+     */
+    public static boolean isSdCardExist() {
+        return Environment.getExternalStorageState()
+                .equals(android.os.Environment.MEDIA_MOUNTED);//判断sd卡是否存在
+    }
+
+    /**
+     * 检测网络连接是否可用
+     */
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm == null) {
+            return false;
+        }
+        NetworkInfo[] netinfo = cm.getAllNetworkInfo();
+        if (netinfo == null) {
+            return false;
+        }
+        for (NetworkInfo aNetinfo : netinfo) {
+            if (aNetinfo.isConnected()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 获取版本号
+     */
+    public static int getAppVersionCode(Context context){
+        PackageManager packageManager = context.getPackageManager();
+        PackageInfo packInfo = null;
+        try {
+            packInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
+            return packInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 
 }

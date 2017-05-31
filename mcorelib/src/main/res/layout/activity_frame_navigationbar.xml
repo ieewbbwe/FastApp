@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_frame_title_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F8">
+
+    <!--左边-->
+    <Button
+        android:id="@+id/activity_frame_title_btn_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@null"
+        android:drawableLeft="@mipmap/navigationbar_leftbtn_icon2"
+        android:ellipsize="end"
+        android:gravity="left|center_vertical"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:padding="3dp"
+        android:singleLine="true"
+        android:textColor="@drawable/textcolor_selecter"
+        android:textSize="16sp"/>
+
+    <!--中间-->
+    <RelativeLayout
+        android:id="@+id/activity_frame_titleview_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/activity_frame_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="标题"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_frame_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="85dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/activity_frame_search_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="#fff"
+            android:drawableLeft="@mipmap/search_icon"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:hint="@string/hint_search_bar"
+            android:imeOptions="actionSearch"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:id="@+id/activity_frame_search_et_clear"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#ff0000"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <!--右边-->
+    <Button
+        android:id="@+id/activity_frame_title_btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="11dp"
+        android:background="@null"
+        android:ellipsize="end"
+        android:gravity="right|center_vertical"
+        android:padding="3dp"
+        android:textColor="@drawable/textcolor_selecter"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="#c1c1c1"/>
+</RelativeLayout>

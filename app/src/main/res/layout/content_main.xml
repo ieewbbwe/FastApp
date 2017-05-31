@@ -21,21 +21,4 @@
         android:onClick="dataBindClick"
         android:text="Data binding"/>
 
-    <com.webber.mcorelibspace.MyObservLayout
-        android:id="@+id/m_test_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <com.github.jdsjlzx.recyclerview.LRecyclerView
-        android:id="@+id/m_list_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-    <ListView
-        android:id="@+id/m_list_lv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"/>
 </LinearLayout>

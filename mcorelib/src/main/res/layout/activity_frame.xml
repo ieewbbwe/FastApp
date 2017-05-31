@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/main_root"
+    android:id="@+id/m_main_root_rl"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +18,7 @@
 
         <!-- 标题栏 -->
         <ViewStub
-            android:id="@+id/title_stub"
+            android:id="@+id/m_title_bar_vsb"
             android:layout_width="match_parent"
             android:layout_height="@dimen/navigation_height"/>
 
@@ -28,7 +28,7 @@
             android:layout_height="match_parent">
 
             <ViewStub
-                android:id="@+id/body_stub"
+                android:id="@+id/m_body_vsb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inflatedId="@+id/body_root"/>
@@ -42,8 +42,9 @@
         </FrameLayout>
     </LinearLayout>
 
+    <!--加载进度-->
     <LinearLayout
-        android:id="@+id/frame_progress"
+        android:id="@+id/m_loading_ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/navigation_height"
@@ -68,42 +69,16 @@
                 android:indeterminate="true"
                 android:padding="16dp"/>
 
-            <TextView
-                android:id="@+id/frame_progress_label"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:text="@string/label_loading"
-                android:textColor="@color/white"
-                android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/frame_modal_view_bg"
+    <!--遮罩层-->
+    <View
+        android:id="@+id/m_shade_v"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#666"
-        android:clickable="true"
-        android:visibility="gone">
-    </RelativeLayout>
+        android:background="#30000000"
+        android:visibility="gone"/>
 
-    <RelativeLayout
-        android:id="@+id/frame_modal_view_root"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/navigation_height"
-        android:background="@null"
-        android:clickable="true"
-        android:visibility="gone">
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/frame_help_relativelayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:visibility="gone">
-    </RelativeLayout>
 
 </RelativeLayout>
