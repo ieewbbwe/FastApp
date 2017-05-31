@@ -2,7 +2,9 @@ package com.android_mobile.core;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
+import android.view.LayoutInflater;
 
+import com.android_mobile.core.utiles.Lg;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 /**
@@ -12,11 +14,9 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 public abstract class BasicActivity extends RxAppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected final String TAG = this.getClass().getSimpleName();
 
-    }
+    private LayoutInflater layoutInflater;
 
     protected abstract void initComp();
 
@@ -25,8 +25,19 @@ public abstract class BasicActivity extends RxAppCompatActivity {
     protected abstract void initData();
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        printLog();
+        BasicApplication.activityStack.add(this);
+        layoutInflater = getLayoutInflater();
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(R.layout.activity_frame);
+    }
 
+    private void printLog() {
+        Lg.print(TAG, Thread.currentThread().getStackTrace()[3].getMethodName());
     }
 }
