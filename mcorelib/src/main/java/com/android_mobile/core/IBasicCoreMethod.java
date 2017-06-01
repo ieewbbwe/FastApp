@@ -85,4 +85,16 @@ public interface IBasicCoreMethod {
      * @param resId 资源id
      */
     void toast(int resId);
+
+    void toast(String str);
+
+    /**
+     * 设置页面标题
+     *
+     * @param title 标题
+     */
+    void setTitle(String title);
+
+    void setTitle(int resId);
+
 }

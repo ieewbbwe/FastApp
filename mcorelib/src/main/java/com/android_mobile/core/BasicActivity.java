@@ -75,6 +75,10 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
         init();
     }
 
+    public View getRootView() {
+        return mRootView;
+    }
+
     private void printLog() {
         Lg.print(TAG, Thread.currentThread().getStackTrace()[3].getMethodName());
     }
@@ -158,6 +162,15 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
     }
 
     @Override
+    public void setTitle(String title) {
+        mNavigationBar.setTitle(title);
+    }
+
+    public void setTitle(int resId) {
+        mNavigationBar.setTitle(resId);
+    }
+
+    @Override
     public float getScreenWidth() {
         if (SCREEN_WIDTH == -1) {
             DisplayMetrics metrics = new DisplayMetrics();
@@ -225,5 +238,14 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
     @Override
     public void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
+    }
+
+    public void exitAppWithToast() {
+        while (BasicApplication.activityStack.size() > 0) {
+            BasicApplication.activityStack.pop().finish();
+        }
+        finish();
+        System.gc();
+        System.exit(0);
     }
 }

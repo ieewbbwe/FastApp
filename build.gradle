@@ -40,11 +40,13 @@ ext {
     gsonVersion = "2.4"
     retrofitConvertVersion = "2.2.0"
     retrofitVersion = "2.2.0"
+
     //database lib
     ormlitVersion = "5.0"
     ninenoVersion = "2.4.0"
     LRecyclerVersion = "1.4.3"
     premissionVersion = "1.0.3"
+
     //Rx Lib
     rxJavaVersion = "1.1.0"
     rxJavaAdapterVersion = "2.0.2"

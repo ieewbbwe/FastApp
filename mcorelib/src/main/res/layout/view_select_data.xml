@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/pop_layout"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_alignParentBottom="true"
+              android:gravity="center_horizontal|bottom"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_take_photo"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="@string/label_take_photo"
+        android:textSize="16sp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ebebeb"/>
+
+    <TextView
+        android:id="@+id/tv_pick_photo"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="@string/label_chose_form_album"
+        android:textSize="16sp"/>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ebebeb"/>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="@string/label_cancel"
+        android:textSize="16sp"/>
+
+</LinearLayout>

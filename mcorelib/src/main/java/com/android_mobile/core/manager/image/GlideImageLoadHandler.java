@@ -17,9 +17,9 @@ import java.io.File;
 public class GlideImageLoadHandler implements ImageLoadHandler {
 
     //默认占位图
-    private static final int DEFAULT_PLACEHOLDER = R.mipmap.img_item_default;
+    private static final int DEFAULT_PLACEHOLDER = R.mipmap.ic_img_item_default;
     //默认加载失败图片
-    private static final int DEFAULT_ERROR = R.mipmap.img_item_default;
+    private static final int DEFAULT_ERROR = R.mipmap.ic_img_item_default;
     private Context ctx;
 
     public GlideImageLoadHandler(Context context) {

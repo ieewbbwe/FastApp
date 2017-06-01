@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/menu_filter_ll"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="46dp"
+              android:background="#ffffff"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <!--类型-->
+        <RelativeLayout
+            android:id="@+id/menu_filter_type_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/menu_filter_type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:singleLine="true"
+                android:text="@string/label_menu_filtrate_type"
+                android:textColor="@drawable/selector_filter_text_color"
+                android:textSize="@dimen/menu_filter_text_size"/>
+
+            <ImageView
+                android:id="@+id/type_iv"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/menu_filter_type_tv"
+                android:src="@mipmap/ic_filter_arrow"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/divider_color"/>
+        </RelativeLayout>
+
+        <!--时间-->
+        <RelativeLayout
+            android:id="@+id/menu_filter_time_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/menu_filter_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:singleLine="true"
+                android:text="@string/label_menu_filtrate_time"
+                android:textColor="@drawable/selector_filter_text_color"
+                android:textSize="@dimen/menu_filter_text_size"/>
+
+            <ImageView
+                android:id="@+id/time_iv"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/menu_filter_time_tv"
+                android:src="@mipmap/ic_filter_arrow"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/divider_color"/>
+        </RelativeLayout>
+
+        <!--排序列表-->
+        <RelativeLayout
+            android:id="@+id/menu_filter_sort_rl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/menu_filter_sort_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="@string/label_menu_filtrate_sort"
+                android:textColor="@drawable/selector_filter_text_color"
+                android:textSize="@dimen/menu_filter_text_size"/>
+
+            <ImageView
+                android:id="@+id/sort_iv"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/menu_filter_sort_tv"
+                android:src="@mipmap/ic_filter_arrow"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/divider_color"/>
+</LinearLayout>

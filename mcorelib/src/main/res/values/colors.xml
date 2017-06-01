@@ -443,18 +443,12 @@
     <color name="darkblue">#00008B</color>
     <!-- 海军色 -->
     <color name="navy">#000080</color>
-    <!-- 灰色字体颜色 -->
-    <color name="text_color">#464e56</color>
-    <color name="text_color_gray">#b9bdc5</color>
     <!-- 钱的颜色 -->
     <color name="moneycolor">#1C86EE</color>
     <color name="dark_grey">#ff555555</color>
     <color name="translucent_background">#77000000</color>
     <color name="content_background">#ffe6e6e6</color>
     <color name="text_black">#000000</color>
-    <!-- Android standard ICS color -->
-    <!-- Android standard ICS color -->
-    <!-- Android standard ICS color -->
     <color name="light_item_gray">#f7f7f7</color>
     <color name="elect_rang_line">#d0d0d0</color>
 
@@ -482,5 +476,18 @@
     <color name="g_default_loading_bg">@color/grey_300</color>
     <color name="divide_line">#E0E0E2</color>
 
+    <!--项目数据-->
+    <!--普通文字颜色-->
+    <color name="text_color">#575656</color>
+    <!-- 灰色字体颜色 -->
+    <color name="text_color_gray">#b9bdc5</color>
+    <!--所有布局白色背景-->
+    <color name="bg_white">#ffffff</color>
+    <!--所有布局灰色背景-->
+    <color name="bg_gray">#F1F1F5</color>
+    <!--共用divider颜色-->
+    <color name="divider_color">#dcdcdc</color>
+    <!--筛选栏文字选中颜色-->
+    <color name="menu_filter_text_select_color">#5976ae</color>
 
 </resources>

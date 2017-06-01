@@ -11,4 +11,11 @@
     <string name="tip_network_error">没有可用的网络</string>
     <string name="button_comfirm">确认</string>
     <string name="hint_search_bar">请输入关键字</string>
+    <string name="button_cancel">取消</string>
+    <string name="label_take_photo">拍照</string>
+    <string name="label_chose_form_album">从相册中选</string>
+    <string name="label_cancel">取消</string>
+    <string name="label_menu_filtrate_type">类型</string>
+    <string name="label_menu_filtrate_time">时间</string>
+    <string name="label_menu_filtrate_sort">排序</string>
 </resources>

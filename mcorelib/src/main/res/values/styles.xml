@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Genius.Widget.Loading" parent="">
         <item name="gBackgroundLineSize">@dimen/g_loading_lineSize</item>
         <item name="gForegroundLineSize">@dimen/g_loading_lineSize</item>
@@ -9,5 +10,24 @@
 
         <item name="gLineStyle">circle</item>
         <item name="gAutoRun">true</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <!-- Used for the background -->
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+
+    <style name="take_photo_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
     </style>
 </resources>

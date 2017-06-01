@@ -75,7 +75,7 @@ public class UncaughtException implements Thread.UncaughtExceptionHandler {
             FileWriter writer = null;
             try {
                 ex.printStackTrace();
-                writer = new FileWriter(mCacheLogFile);
+                writer = new FileWriter(mCacheLogFile, true);
                 writer.write("\r\n");
                 writer.write("time-->" + TimerUtils.formatTime(System.currentTimeMillis(),
                         TimerUtils.FORMAT_YYYY_MM_DD$BLANK$HH$COLON$MM));

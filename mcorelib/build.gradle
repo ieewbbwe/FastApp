@@ -47,5 +47,6 @@ dependencies {
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     /*列表框架*/
     compile project(':LRecyclerview_library')
+    // compile "com.github.jdsjlzx:LRecyclerView:$rootProject.ext.LRecyclerVersion"
 
 }

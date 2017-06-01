@@ -61,7 +61,7 @@ RxJava生命周期管理库 https://github.com/trello/RxLifecycle
 Copyright (C) 2016 Trello
 Apache License, Version 2.0
 
-# 工具类介绍（欢迎补充）
+## 工具类介绍（欢迎补充）
 ### Utils 基础工具类
 1. 判断系统网络情况
 2. dip2px 互换
@@ -98,5 +98,31 @@ Apache License, Version 2.0
 ### Log工具类
 1. 打印各级log，上线后屏蔽所有log
 
-##包结构说明
+## 包结构说明
+### app
+
+### base
+对Basic的封装，用于拓展，自己的Activity继承该Base类
+
+### listener
+用到的接口
+
+### manager
+图片加载管理器，Sp管理器
+
+### net
+网络访问框架的封装
+
+### ui
+一些常用的自定义控件和组件
+1. dialog 基于AppCompat包的对话框，继承BasicDialog可自定义界面
+2. popupWindows 底部弹出框，联级菜单弹出框，列表弹出框
+3. banner 支持无限轮播，触摸停止，点击放大
+4. zxing 二维码扫描
+5. 筛选的自定义控件
+6. tab的自定义控件
+7. 嵌套滑动NestScroll
+8. 动画相关
+
+### utiles
 

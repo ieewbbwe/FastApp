@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
 
 /**
  * Created by mxh on 2017/5/30.
@@ -61,7 +63,7 @@ public class Utiles {
     /**
      * 获取版本号
      */
-    public static int getAppVersionCode(Context context){
+    public static int getAppVersionCode(Context context) {
         PackageManager packageManager = context.getPackageManager();
         PackageInfo packInfo = null;
         try {
@@ -71,6 +73,16 @@ public class Utiles {
             e.printStackTrace();
             return 0;
         }
+    }
+
+    /**
+     * 获取设备高
+     */
+    public static int getScreenHeight(Context context) {
+        DisplayMetrics mDisplayMetrics = new DisplayMetrics();
+        ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
+                .getDefaultDisplay().getMetrics(mDisplayMetrics);
+        return mDisplayMetrics.heightPixels;
     }
 
 }

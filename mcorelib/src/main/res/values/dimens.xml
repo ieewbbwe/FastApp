@@ -9,5 +9,6 @@
     <dimen name="g_loading_lineSize">2dp</dimen>
     <dimen name="default_divider_height">1dp</dimen>
     <dimen name="default_divider_padding">4dp</dimen>
+    <dimen name="menu_filter_text_size">16sp</dimen>
 
 </resources>

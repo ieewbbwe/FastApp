@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/bg_white_round"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/app_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="标题"
+        android:textColor="#222222"
+        android:textSize="16sp"/>
+
+
+    <TextView
+        android:id="@+id/app_dialog_descri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="内容"
+        android:textColor="#444444"
+        android:textSize="14sp"/>
+
+    <EditText
+        android:id="@+id/dialog_content_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:hint="请输入内容..."
+        android:maxLength="300"
+        android:maxLines="3"
+        android:minHeight="50dp"
+        android:textColor="@color/text_color"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentTop="true"
+            android:background="#e0e0e0"/>
+
+        <View
+            android:id="@+id/app_dialog_view"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#e0e0e0"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/app_dialog_button1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:text="@string/button_cancel"
+                android:textColor="#717171"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/app_dialog_button2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:text="@string/button_comfirm"
+                android:textColor="#3974c3"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
