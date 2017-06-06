@@ -123,6 +123,9 @@ Apache License, Version 2.0
 6. tab的自定义控件
 7. 嵌套滑动NestScroll
 8. 动画相关
+9. 分享
+10. 支付
+11. 定位
 
 ### utiles
 

@@ -24,8 +24,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    //compile project(':coreLib')
-    compile project(':mcorelib')
+    compile project(':coreLib')
+    //compile project(':mcorelib')
     compile "com.android.support:appcompat-v7:$rootProject.ext.appcompatV7Version"
     compile "com.android.support:design:$rootProject.ext.designVersion"
     testCompile 'junit:junit:4.12'
