@@ -23,4 +23,5 @@
     <string name="button_comfirm">确认</string>
     <string name="label_chose_share_comp">请选择分享工具</string>
     <string name="NotFoundActivityNotify">分享失败</string>
+    <string name="label_share_fail">分享失败</string>
 </resources>

@@ -22,9 +22,13 @@
         android:text="Data binding"/>
 
     <TextView
-        android:text="这是一段带有超链接的文本www.baidu.com，点击一下试试看"
         android:id="@+id/m_link_tv"
-        android:autoLink="web"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这是一段带有超链接的文本www.baidu.com，点击一下试试看"/>
+
+    <com.android_mobile.core.ui.CountDownTextView
+        android:id="@+id/m_count_down_tv"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

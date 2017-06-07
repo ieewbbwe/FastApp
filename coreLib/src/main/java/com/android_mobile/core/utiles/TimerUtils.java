@@ -409,9 +409,9 @@ public class TimerUtils {
         long second = (l / 1000 - days * 24 * 60 * 60 - hours * 60 * 60 - minutes * 60);
 
         if (l < (1000 * 60 * 60 * 24)) { //小於24小時
-            return df.format(hours) + ":" + df.format(minutes) + ":" + df.format(second) + " 後結束";
+            return df.format(hours) + ":" + df.format(minutes) + ":" + df.format(second) + " 后结束";
         } else {//大於24小時
-            return days + "天" + df.format(hours) + "時" + " 後結束";
+            return days + "天" + df.format(hours) + "时" + " 后结束";
         }
     }
 

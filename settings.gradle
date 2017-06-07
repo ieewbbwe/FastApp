@@ -1,1 +1,1 @@
-include ':app', ':coreLib', ':LRecyclerview_library', ':mcorelib'
+include ':app', ':coreLib',':sdk-core', ':sdk-share', ':LRecyclerview_library'

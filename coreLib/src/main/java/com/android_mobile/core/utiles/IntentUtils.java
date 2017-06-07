@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.android_mobile.core.R;
+
 import java.util.List;
 
 /**
@@ -77,5 +79,29 @@ public class IntentUtils {
         Uri content_url = Uri.parse(url);
         intent.setData(content_url);
         context.startActivity(intent);
+    }
+
+    public static void shareApplication(Context context, String packname, String url) {
+        // <action android:name="android.intent.action.SEND" />
+        // <category android:name="android.intent.category.DEFAULT" />
+        // <data android:mimeType="text/plain" />
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        /*
+         * intent.putExtra(Intent.EXTRA_TEXT,
+         * "推荐您使用一款软件,下载地址为:https://play.google.com/store/apps/details?id=" +
+         * packname);
+         */
+        intent.putExtra(Intent.EXTRA_SUBJECT, "请选择分享工具");
+        intent.putExtra(Intent.EXTRA_TEXT, "推荐您使用一款软件,下载地址为:" + url + " ?id=" + packname);
+        try {
+            context.startActivity(
+                    Intent.createChooser(intent,
+                            context.getResources().getString(R.string.label_chose_share_comp)));
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+            Toast.makeText(context, context.getString(R.string.label_share_fail), Toast.LENGTH_SHORT).show();
+        }
     }
 }

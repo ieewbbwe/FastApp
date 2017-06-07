@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">sdk-share</string>
+    <string name="umeng_socialize_wechat">微信好友</string>
+    <string name="umeng_socialize_wxcircle">微信朋友</string>
+    <string name="umeng_socialize_tencent">QQ好友</string>
+    <string name="umeng_socialize_explorer">浏览器打开</string>
+    <string name="umeng_socialize_copylink">复制链接</string>
+</resources>

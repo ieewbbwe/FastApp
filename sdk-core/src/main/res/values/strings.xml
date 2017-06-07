@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MCoreLib</string>
+    <string name="label_loading">加载中</string>
+    <string name="label_network_unavailable">网络不可用</string>
+    <!-- Error View -->
+    <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+    <string name="error_view_no_data">暂无内容</string>
+    <string name="error_view_loading">加载中…</string>
+    <string name="error_view_load_error_click_to_refresh">内容加载失败\r\n点击重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <string name="tip_network_error">没有可用的网络</string>
+    <string name="button_comfirm">确认</string>
+    <string name="hint_search_bar">请输入关键字</string>
+    <string name="button_cancel">取消</string>
+    <string name="label_take_photo">拍照</string>
+    <string name="label_chose_form_album">从相册中选</string>
+    <string name="label_cancel">取消</string>
+    <string name="label_menu_filtrate_type">类型</string>
+    <string name="label_menu_filtrate_time">时间</string>
+    <string name="label_menu_filtrate_sort">排序</string>
+    <string name="label_chose_share_comp">请选择分享工具</string>
+    <string name="label_share_fail">分享失败</string>
+</resources>
