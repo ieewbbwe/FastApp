@@ -7,12 +7,13 @@ import android.widget.TextView;
 
 import com.android_mobile.core.BasicActivity;
 import com.android_mobile.core.ui.CountDownTextView;
-import com.android_mobile.core.utiles.IntentUtils;
-import com.android_mobile.share.SocialComponent;
+
+import cn.sharesdk.SocialShareHelper;
 
 public class MainActivity extends BasicActivity {
 
-    private SocialComponent mShareComp;
+
+    private SocialShareHelper socialComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +25,16 @@ public class MainActivity extends BasicActivity {
         CountDownTextView downTextView = (CountDownTextView) findViewById(R.id.m_count_down_tv);
         downTextView.setTime(1000 * 10);
         downTextView.toStart();
-        mShareComp = new SocialComponent(this, SocialComponent.SOCIAL_SHARE);
-
+        socialComponent = new SocialShareHelper(this, SocialShareHelper.SOCIAL_SHARE);
         navigationBar.hidden();
         findViewById(R.id.m_bottom_bt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //showBottomChoseView();
                 //component.share(MainActivity.this);
-                //mShareComp.show();
-                IntentUtils.shareApplication(MainActivity.this, getPackageName(), "www.baidu.com");
+                //IntentUtils.shareApplication(MainActivity.this, getPackageName(), "www.baidu.com");
+                //showShare(MainActivity.this, null, false);
+                socialComponent.show();
             }
         });
 

@@ -40,6 +40,7 @@ dependencies {
     })
     compile project(':coreLib')
     compile project(':sdk-share')
+    //compile project(':sdk-share')
     //compile project(':mcorelib')
     compile "com.android.support:appcompat-v7:$rootProject.ext.appcompatV7Version"
     compile "com.android.support:design:$rootProject.ext.designVersion"
