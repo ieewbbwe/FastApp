@@ -19,9 +19,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- 蓝牙权限 -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
+    <!--
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    -->
     <application>
         <activity
             android:name="com.mob.tools.MobUIShell"

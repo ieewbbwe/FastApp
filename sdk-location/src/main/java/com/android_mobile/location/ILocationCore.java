@@ -1,6 +1,6 @@
 package com.android_mobile.location;
 
-import com.baidu.location.BDLocationListener;
+import com.android_mobile.location.listener.LocationListener;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.radar.RadarSearchListener;
 import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
@@ -19,7 +19,7 @@ public interface ILocationCore {
      *
      * @param locationListener 定位回调
      */
-    void startLocation(BDLocationListener locationListener);
+    void startLocation(LocationListener locationListener);
 
     /**
      * 停止定位
@@ -40,7 +40,7 @@ public interface ILocationCore {
      *
      * @param radarSearchListener 结果回调
      */
-    void startRanderNearby(RadarSearchListener radarSearchListener);
+    void startRadarNearby(RadarSearchListener radarSearchListener);
 
     /**
      * 按关键字查找周边信息

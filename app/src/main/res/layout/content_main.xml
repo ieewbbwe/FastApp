@@ -15,20 +15,8 @@
     tools:context="com.webber.mcorelibspace.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <Button
-        android:id="@+id/m_bottom_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Data binding"/>
-
-    <TextView
-        android:id="@+id/m_link_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这是一段带有超链接的文本www.baidu.com，点击一下试试看"/>
-
-    <com.android_mobile.core.ui.CountDownTextView
-        android:id="@+id/m_count_down_tv"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/m_demo_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 </LinearLayout>

@@ -141,7 +141,7 @@ public class SocialShareHelper {
         this.content = content;
     }
 
-    public class Builder {
+    public static class Builder {
         private Context mContext;
         private SocialShareHelper socialComponent;
 
@@ -180,13 +180,14 @@ public class SocialShareHelper {
             return this;
         }
 
-        public void Builder() {
+        public SocialShareHelper create() {
             socialComponent = new SocialShareHelper(mContext, SocialShareHelper.SOCIAL_SHARE);
             socialComponent.setUrl(url);
             socialComponent.setTitle(title);
             socialComponent.setTitleUrl(titleUrl);
             socialComponent.setContent(content);
             socialComponent.setImageUrl(imageUrl);
+            return socialComponent;
         }
     }
 }

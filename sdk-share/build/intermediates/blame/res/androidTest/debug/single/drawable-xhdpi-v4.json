@@ -60,12 +60,12 @@
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_kaixin.png"
     },
     {
-        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_back_arr.png",
-        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_back_arr.png"
-    },
-    {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_mingdao.png",
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_mingdao.png"
+    },
+    {
+        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_back_arr.png",
+        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_back_arr.png"
     },
     {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_bluetooth.png",
@@ -140,12 +140,12 @@
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_title_div.png"
     },
     {
-        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_instapaper.png",
-        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_instapaper.png"
-    },
-    {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png",
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png"
+    },
+    {
+        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_instapaper.png",
+        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_instapaper.png"
     },
     {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_facebookmessenger.png",
