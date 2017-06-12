@@ -5,10 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.webber.mcorelibspace.demo.map.MapActivity">
+    tools:context="com.webber.mcorelibspace.demo.map.MapDemoActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/m_map_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>

@@ -38,7 +38,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    //compile project(':coreLib')
+    compile project(':coreLib')
     compile project(':sdk-share')
     compile project(':sdk-location')
     //compile project(':mcorelib')

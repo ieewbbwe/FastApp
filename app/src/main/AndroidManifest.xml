@@ -25,9 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".demo.ShareActivity">
+        <activity android:name=".demo.share.ShareActivity">
         </activity>
-        <activity android:name=".demo.MapActivity">
+        <activity android:name=".demo.map.MapActivity">
+        </activity>
+        <activity android:name=".demo.map.LocationDemoActivity">
+        </activity>
+        <activity android:name=".demo.map.MapDemoActivity">
         </activity>
     </application>
 

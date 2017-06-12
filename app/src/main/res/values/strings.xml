@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MCoreLibSpace</string>
     <string name="action_settings">Settings</string>
+    <string name="label_locate">定位</string>
+    <string name="label_distance">距离测算</string>
+    <string name="label_nearby_search">周边查找</string>
 </resources>

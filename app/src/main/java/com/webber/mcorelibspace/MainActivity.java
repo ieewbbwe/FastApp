@@ -12,8 +12,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.android_mobile.location.MMapView;
-import com.webber.mcorelibspace.demo.MapActivity;
-import com.webber.mcorelibspace.demo.ShareActivity;
+import com.webber.mcorelibspace.demo.map.MapActivity;
+import com.webber.mcorelibspace.demo.share.ShareActivity;
 
 import cn.sharesdk.SocialShareHelper;
 
@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
         mDemoRv = (RecyclerView) findViewById(R.id.m_demo_rv);
         mDemoRv.setLayoutManager(new LinearLayoutManager(this));
         DemoAdapter mAdapter = new DemoAdapter();
+        mAdapter.setData(DEMOS);
         mDemoRv.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -47,12 +48,17 @@ public class MainActivity extends Activity {
         });
     }
 
-    class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
+    public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
 
         private AdapterView.OnItemClickListener listener;
+        private DemoInfo[] demoInfos;
 
         public void setOnItemClickListener(AdapterView.OnItemClickListener listener) {
             this.listener = listener;
+        }
+
+        public void setData(DemoInfo[] demoInfos) {
+            this.demoInfos = demoInfos;
         }
 
         @Override
@@ -63,7 +69,7 @@ public class MainActivity extends Activity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, final int position) {
-            holder.mDemoBt.setText(DEMOS[position].title + "\n" + DEMOS[position].desc);
+            holder.mDemoBt.setText(demoInfos[position].title + "\n" + demoInfos[position].desc);
 
             if (listener != null) {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +83,7 @@ public class MainActivity extends Activity {
 
         @Override
         public int getItemCount() {
-            return DEMOS.length;
+            return demoInfos.length;
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -91,7 +97,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    private static class DemoInfo {
+    public static class DemoInfo {
         private String title;
         private String desc;
         private Class<? extends Activity> demoClass;
