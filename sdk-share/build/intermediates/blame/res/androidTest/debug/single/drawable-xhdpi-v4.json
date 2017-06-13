@@ -140,20 +140,20 @@
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_title_div.png"
     },
     {
-        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png",
-        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png"
-    },
-    {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_instapaper.png",
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_instapaper.png"
     },
     {
-        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_facebookmessenger.png",
-        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_facebookmessenger.png"
+        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png",
+        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_alipay.png"
     },
     {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_pocket.png",
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_pocket.png"
+    },
+    {
+        "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_facebookmessenger.png",
+        "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ssdk_oks_classic_facebookmessenger.png"
     },
     {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ssdk_oks_classic_kakaostory.png",

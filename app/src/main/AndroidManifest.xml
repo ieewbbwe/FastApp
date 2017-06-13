@@ -33,6 +33,8 @@
         </activity>
         <activity android:name=".demo.map.MapDemoActivity">
         </activity>
+        <activity android:name=".demo.pay.PayDemoActivity">
+        </activity>
     </application>
 
 </manifest>

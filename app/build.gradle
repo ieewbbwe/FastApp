@@ -41,7 +41,9 @@ dependencies {
     compile project(':coreLib')
     compile project(':sdk-share')
     compile project(':sdk-location')
-    //compile project(':mcorelib')
+    compile project(':sdk-pay')
+    compile project(':sdk-net')
+    //compile project(':sdk-core')
     compile "com.android.support:appcompat-v7:$rootProject.ext.appcompatV7Version"
     compile "com.android.support:design:$rootProject.ext.designVersion"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

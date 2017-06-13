@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.Button;
 
 import com.android_mobile.location.MMapView;
 import com.webber.mcorelibspace.demo.map.MapActivity;
+import com.webber.mcorelibspace.demo.pay.PayDemoActivity;
 import com.webber.mcorelibspace.demo.share.ShareActivity;
 
 import cn.sharesdk.SocialShareHelper;
@@ -26,7 +28,8 @@ public class MainActivity extends Activity {
 
     private DemoInfo[] DEMOS = {
             new DemoInfo("分享模块", "使用ShareSdk进行分享操作", ShareActivity.class),
-            new DemoInfo("地图模块", "使用BaiduApi进行定位，导航，路线规划等功能", MapActivity.class)
+            new DemoInfo("地图模块", "使用BaiduApi进行定位，导航，路线规划等功能", MapActivity.class),
+            new DemoInfo("支付模块", "支付宝支付、微信支付功能", PayDemoActivity.class)
     };
 
     @Override
@@ -36,16 +39,17 @@ public class MainActivity extends Activity {
         mDemoRv = (RecyclerView) findViewById(R.id.m_demo_rv);
         mDemoRv.setLayoutManager(new LinearLayoutManager(this));
         DemoAdapter mAdapter = new DemoAdapter();
-        mAdapter.setData(DEMOS);
-        mDemoRv.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("webber", "" + position);
                 Intent intent;
                 intent = new Intent(MainActivity.this, DEMOS[position].demoClass);
-                getApplicationContext().startActivity(intent);
+                startActivity(intent);
             }
         });
+        mAdapter.setData(DEMOS);
+        mDemoRv.setAdapter(mAdapter);
     }
 
     public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
@@ -63,7 +67,7 @@ public class MainActivity extends Activity {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new ViewHolder(LayoutInflater.from(getApplicationContext())
+            return new ViewHolder(LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.view_demo_item, parent, false));
         }
 
@@ -72,7 +76,8 @@ public class MainActivity extends Activity {
             holder.mDemoBt.setText(demoInfos[position].title + "\n" + demoInfos[position].desc);
 
             if (listener != null) {
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                Log.d("webber", "设置监听" + position);
+                holder.mDemoBt.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         listener.onItemClick(null, v, position, 0);
