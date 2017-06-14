@@ -33,7 +33,7 @@ dependencies {
    /* compile "com.android.support:recyclerview-v7:$rootProject.ext.recyclerViewVersion"*/
     compile "com.nineoldandroids:library:$rootProject.ext.ninenoVersion"
     /*compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'*/
-     compile project(':LRecyclerview_library')
+    compile project(':LRecyclerview_library')
     //compile "com.github.jdsjlzx:LRecyclerView:$rootProject.ext.LRecyclerVersion"
     /*6.0 权限库*/
     compile "com.yanzhenjie:permission:$rootProject.ext.premissionVersion"

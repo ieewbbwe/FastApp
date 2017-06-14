@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,4 +7,20 @@
     android:layout_height="match_parent"
     tools:context="com.webber.mcorelibspace.demo.map.MapDemoActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/m_locate_current_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="定位当前"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"/>
+
+
+    <com.android_mobile.location.MMapView
+        android:id="@+id/m_demo_mmv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/m_locate_current_bt"
+        tools:layout_editor_absoluteX="8dp"/>
+
+</RelativeLayout>

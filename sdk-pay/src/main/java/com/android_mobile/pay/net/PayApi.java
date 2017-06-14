@@ -13,8 +13,8 @@ import rx.Observable;
 public interface PayApi {
 
     @GET(PayUrlMgr.URL_CREATE_ALI_ORDER_INFO)
-    Observable<Response<RewardAliResp>> createAliOrderInfo(@Query("orderNumber") String orderNum, @Query("price") long incomeAmt);
+    Observable<Response<RewardAliResp>> createAliOrderInfo(@Query("orderNumber") String orderNum, @Query("price") double incomeAmt);
 
     @GET(PayUrlMgr.URL_CREATE_WX_ORDER_INFO)
-    Observable<Response<RewardWxResp>> createWxOrderInfo(@Query("orderNumber") String orderNum, @Query("price") long incomeAmt);
+    Observable<Response<RewardWxResp>> createWxOrderInfo(@Query("orderNumber") String orderNum, @Query("price") double incomeAmt);
 }

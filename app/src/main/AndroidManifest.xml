@@ -35,6 +35,8 @@
         </activity>
         <activity android:name=".demo.pay.PayDemoActivity">
         </activity>
+        <activity android:name=".demo.net.NetDemoActivity">
+        </activity>
     </application>
 
 </manifest>

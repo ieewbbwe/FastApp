@@ -25,7 +25,7 @@ import java.lang.reflect.Method;
 
 /**
  * Created by mxh on 2017/4/26.
- * Describe：
+ * Describe：Activity基类
  */
 
 public abstract class BasicActivity extends RxAppCompatActivity implements IBasicCoreMethod {

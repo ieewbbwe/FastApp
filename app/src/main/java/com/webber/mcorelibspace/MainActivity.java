@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.android_mobile.location.MMapView;
 import com.webber.mcorelibspace.demo.map.MapActivity;
+import com.webber.mcorelibspace.demo.net.NetDemoActivity;
 import com.webber.mcorelibspace.demo.pay.PayDemoActivity;
 import com.webber.mcorelibspace.demo.share.ShareActivity;
 
@@ -29,7 +30,8 @@ public class MainActivity extends Activity {
     private DemoInfo[] DEMOS = {
             new DemoInfo("分享模块", "使用ShareSdk进行分享操作", ShareActivity.class),
             new DemoInfo("地图模块", "使用BaiduApi进行定位，导航，路线规划等功能", MapActivity.class),
-            new DemoInfo("支付模块", "支付宝支付、微信支付功能", PayDemoActivity.class)
+            new DemoInfo("支付模块", "支付宝支付、微信支付功能", PayDemoActivity.class),
+            new DemoInfo("网络模块", "封装Retrofit，提供网络访问功能", NetDemoActivity.class)
     };
 
     @Override
@@ -42,7 +44,6 @@ public class MainActivity extends Activity {
         mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("webber", "" + position);
                 Intent intent;
                 intent = new Intent(MainActivity.this, DEMOS[position].demoClass);
                 startActivity(intent);
@@ -110,6 +111,30 @@ public class MainActivity extends Activity {
         public DemoInfo(String title, String desc, Class<? extends Activity> demoClass) {
             this.title = title;
             this.desc = desc;
+            this.demoClass = demoClass;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getDesc() {
+            return desc;
+        }
+
+        public void setDesc(String desc) {
+            this.desc = desc;
+        }
+
+        public Class<? extends Activity> getDemoClass() {
+            return demoClass;
+        }
+
+        public void setDemoClass(Class<? extends Activity> demoClass) {
             this.demoClass = demoClass;
         }
     }

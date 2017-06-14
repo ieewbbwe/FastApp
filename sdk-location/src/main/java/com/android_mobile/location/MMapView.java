@@ -11,6 +11,7 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
+import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MarkerOptions;
@@ -55,6 +56,27 @@ public class MMapView extends FrameLayout implements IMapCore {
         mBaiduMap = mMapView.getMap();
         mSearch = RoutePlanSearch.newInstance();
         addView(mMapView, params);
+    }
+
+    /**
+     * 移动到地图上某个点
+     *
+     * @param latLng 点位坐标
+     * @param isAnim 是否开启动画
+     */
+    @Override
+    public void moveToPoint(LatLng latLng, boolean isAnim) {
+        MapStatus mapStatus = new MapStatus.Builder()
+                .target(latLng)
+                .zoom(12.0f)
+                .build();
+        MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mapStatus);
+        //改变地图状态
+        if (isAnim) {
+            mBaiduMap.animateMapStatus(mMapStatusUpdate);
+        } else {
+            mBaiduMap.setMapStatus(mMapStatusUpdate);
+        }
     }
 
     /**
