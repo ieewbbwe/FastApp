@@ -31,8 +31,11 @@ import java.lang.reflect.Method;
 public abstract class BasicActivity extends RxAppCompatActivity implements IBasicCoreMethod {
 
     protected final String TAG = this.getClass().getSimpleName();
+    /*设备屏幕宽度*/
     private float SCREEN_WIDTH = -1;
+    /*设备屏幕高度*/
     private float SCREEN_HEIGHT = -1;
+    /*设备状态栏高度*/
     private float STATUS_BAR_HEIGHT = -1;
     private LinearLayout mProgressBar;
     protected NavigationBar mNavigationBar;
