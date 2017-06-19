@@ -1,4 +1,10 @@
-##使用文档
+#库文件申明
+## Retrofit
+网络请求库 https://github.com/square/retrofit
+Copyright 2013 Square, Inc.
+Apache License, Version 2.0
+
+#使用文档
 1. 继承BaseFactory，生成相关api，对Retrofit进行二次封装，使用统一的client配置
 2. 响应参数继承BaseResponse，请求参数继承BaseRequest
 For example:

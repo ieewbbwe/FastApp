@@ -4,7 +4,7 @@ import android.content.Intent;
 
 /**
  * Created by mxh on 2017/5/31.
- * Describe：
+ * Describe：Activity基类核心方法
  */
 
 public interface IBasicCoreMethod {

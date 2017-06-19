@@ -47,12 +47,6 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
     private FragmentManager fm;
     private Toast toast;
 
-    protected abstract void initComp();
-
-    protected abstract void initListener();
-
-    protected abstract void initData();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -77,6 +71,21 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
         initDefault();
         init();
     }
+
+    /**
+     * 初始化控件，查找View
+     */
+    protected abstract void initComp();
+
+    /**
+     * 初始化监听器
+     */
+    protected abstract void initListener();
+
+    /**
+     * 初始化数据
+     */
+    protected abstract void initData();
 
     public View getRootView() {
         return mRootView;

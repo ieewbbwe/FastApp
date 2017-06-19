@@ -38,14 +38,16 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    testCompile 'junit:junit:4.12'
+
     compile "com.android.support:appcompat-v7:$rootProject.ext.appcompatV7Version"
     compile "com.android.support:design:$rootProject.ext.designVersion"
     compile "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
-    testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //compile project(':coreLib')
+    compile project(':sdk-core')
     compile project(':sdk-share')
     compile project(':sdk-location')
     compile project(':sdk-pay')
     compile project(':sdk-net')
-    compile project(':sdk-core')
 }
