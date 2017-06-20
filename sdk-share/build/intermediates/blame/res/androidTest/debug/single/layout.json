@@ -1,7 +1,15 @@
 [
     {
+        "merged": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_socialize_item.xml",
+        "source": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_socialize_item.xml"
+    },
+    {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_share.xml",
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_share.xml"
+    },
+    {
+        "merged": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_share.xml",
+        "source": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_share.xml"
     },
     {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_socialize_item.xml",

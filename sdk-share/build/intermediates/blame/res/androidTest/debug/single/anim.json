@@ -1,5 +1,13 @@
 [
     {
+        "merged": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\anim_share_dialog_slid_in.xml",
+        "source": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\anim\\anim_share_dialog_slid_in.xml"
+    },
+    {
+        "merged": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\anim_share_dialog_slid_out.xml",
+        "source": "E:\\asWork\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\anim\\anim_share_dialog_slid_out.xml"
+    },
+    {
         "merged": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\anim_share_dialog_slid_in.xml",
         "source": "D:\\asWork\\FastApp\\FastApp\\sdk-share\\build\\intermediates\\bundles\\debug\\res\\anim\\anim_share_dialog_slid_in.xml"
     },

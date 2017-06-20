@@ -17,7 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    signingConfigs {
+    /*signingConfigs {
         debug {
             storeFile file("D:\\武汉_博彦科技\\picher.jks")
             storePassword "151102"
@@ -30,7 +30,7 @@ android {
             keyAlias "FastApp"
             keyPassword "fastapp"
         }
-    }
+    }*/
 }
 
 dependencies {
@@ -38,12 +38,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile project(':coreLib')
+    //compile project(':coreLib')
     compile project(':sdk-share')
     compile project(':sdk-location')
     compile project(':sdk-pay')
     compile project(':sdk-net')
-    //compile project(':sdk-core')
+    compile project(':sdk-core')
     compile "com.android.support:appcompat-v7:$rootProject.ext.appcompatV7Version"
     compile "com.android.support:design:$rootProject.ext.designVersion"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
