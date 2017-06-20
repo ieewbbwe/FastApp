@@ -29,9 +29,10 @@ ext {
 
     // App dependencies
     supportLibraryVersion = '24.2.0'
+    appcompatV7Version = "25.3.1"
     recyclerViewVersion = "25.3.1"
     designVersion = "25.3.1"
-    appcompatV7Version = "25.3.1"
+    constraintLayoutVersion = "1.0.2"
 
     //net lib
     okHttpVersion = "2.7.5"
@@ -53,7 +54,7 @@ ext {
     rxAndroidVersion = "1.1.0"
     rxLifeVersion = "0.3.1"
     rxBindingVersion = "0.4.0"
-    retrofitLogVersion = "3.3.1"
+    retrofitLogVersion = "3.6.0"
     glideVersion = "3.7.0"
 }
 

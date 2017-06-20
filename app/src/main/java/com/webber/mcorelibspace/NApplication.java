@@ -2,6 +2,7 @@ package com.webber.mcorelibspace;
 
 import android.app.Application;
 
+import com.android_mobile.core.manager.image.ImageLoadFactory;
 import com.android_mobile.location.LocationHelper;
 
 /**
@@ -14,6 +15,6 @@ public class NApplication extends Application {
     public void onCreate() {
         super.onCreate();
         LocationHelper.init(getApplicationContext());
-
+        ImageLoadFactory.init(getApplicationContext());
     }
 }

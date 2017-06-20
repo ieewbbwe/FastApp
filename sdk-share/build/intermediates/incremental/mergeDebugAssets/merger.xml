@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\asWork\FastApp\sdk-share\src\main\assets"><file name="ShareSDK.xml" path="E:\asWork\FastApp\sdk-share\src\main\assets\ShareSDK.xml"/></source><source path="E:\asWork\FastApp\sdk-share\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\asWork\FastApp\sdk-share\src\debug\assets"/></dataSet></merger>

@@ -1,4 +1,11 @@
-## 库文件申明
+# FastApp
+## app
+模块下主要是个功能的demo，目前还在完善中
+
+## sdk-core
+该库是开发框架的核心库，封装了Activity基类，提供一些常用的utils，常用的控件如轮播图dialog、popwindow等
+
+库文件申明
 ### OkHttp
 网络请求库 https://github.com/square/okhttps
 Copyright (C) 2012 Square, Inc.
@@ -98,7 +105,7 @@ Apache License, Version 2.0
 ### Log工具类
 1. 打印各级log，上线后屏蔽所有log
 
-## 包结构说明
+包结构说明
 ### app
 
 ### base
@@ -123,7 +130,75 @@ Apache License, Version 2.0
 6. tab的自定义控件
 7. 嵌套滑动NestScroll
 8. 动画相关
-9. 网络加载页面
+9. 分享
+10. 支付
+11. 定位
+12. 计时器
 
-### utils
+## sdk-location
+该库对百度地图api进行初步的封装，提供了一些地图相关的常用方法
+### 使用说明
+1. 请在module工程build.gradle中添加
+```
+   compile project(':sdk-location')
+```
+2. 在manifest中配置key
+```
+ <application>
 
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="your key" />
+
+    </application>
+```
+3. APP初始化时请调用LocationHelper.init()，否则无法使用位置相关API，相关方法见ILocationCore.java
+4. 地图相关功能请使用MMapView，相关方法见IMapCore.java
+5. 可使用工具检测Key是否正确
+```
+    SDKReceiver sdkReceiver = new SDKReceiver();
+    LocateUtils.checkoutKey(this, sdkReceiver);
+```
+
+百度地图API集成手册：http://developer.baidu.com/map/loc_refer/index.html
+
+注意：可以根据业务需要，自行增减lib包内容来控制apk大小
+
+## sdk-pay
+封装了支付宝支付、微信支付
+
+### 使用文档
+库中引入了支付宝支付，微信支付两种支付方式。
+1. 在PayConstants 中配置好WX_APP_ID，申请地址https://open.weixin.qq.com/
+2. 与公司后端协商，定义生成orderInfo的接口地址，在PayUrlMgr中配置
+3. 可以在PayApi中修改订单接口的请求参数，RewardAliResp和RewardWxResp分别是支付宝订单信息，微信订单信息的响应参数
+4. WXPayEntryActivity这里做了修改，可以同时处理支付宝和微信的回调，并根据支付code做出响应
+5. 注意请按照需要自行添加 notifyService() 通知后端支付结果
+6. 使用方法new PayHelper().aliPrePay()
+
+还有问题的，请看官网接入文档：
+支付宝支付：https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.CoadnK&treeId=204&articleId=105296&docType=1
+微信支付：https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_5
+
+## sdk-share
+
+###使用文档
+1. 修改assets/ShareSDK.XML 中各平对应的key
+2. 修改Manifest 中<data android:scheme="tencent100371282" /> 为腾讯平台的id
+3. 使用SocialShareHelper，对ShareSdk的简单封装
+```
+   socialComponent= new SocialShareHelper.Builder(this)
+                 .setContent("应用描述信息")
+                 .setTitle("推荐给您一款好用的APP，快来试试吧！")
+                 .setTitleUrl("应用下载地址")
+                 .setImageUrl("图片地址").create();
+   socialComponent.show();
+```
+
+其余还有问题的，可以去ShareSdk官网上查阅集成手册。
+http://wiki.mob.com/Android_%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E6%8C%87%E5%8D%97/
+
+注意：使用时请参照需要去掉一些无用lib,减少包大小
+
+## sdk-net
+网络框架，文档待写

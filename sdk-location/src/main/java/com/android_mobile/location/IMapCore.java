@@ -13,6 +13,13 @@ import java.util.List;
 public interface IMapCore {
 
     /**
+     * 移动到地图上某个点
+     *
+     * @param latLng 点位坐标
+     */
+    void moveToPoint(LatLng latLng, boolean isAnim);
+
+    /**
      * 在地图上标出坐标点
      *
      * @param latLng 坐标

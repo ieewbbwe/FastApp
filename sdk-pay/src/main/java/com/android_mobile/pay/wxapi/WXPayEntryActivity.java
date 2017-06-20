@@ -42,7 +42,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
      * 是否是微信回调
      */
     private boolean isWxPayCallBack(Intent intent) {
-        int errCode = intent.getIntExtra("BeyondSoftErrCode", 1);
+        int errCode = intent.getIntExtra(PayConstants.PAY_ERROR_CODE, 1);
         return errCode == 1;
     }
 
@@ -50,7 +50,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
      * 处理支付宝的intent
      */
     private void aliHandlerIntent(Intent intent) {
-        int errCode = intent.getIntExtra("BeyondSoftErrCode", -1);
+        int errCode = intent.getIntExtra(PayConstants.PAY_ERROR_CODE, -1);
         BaseResp resp = new BaseResp() {
 
             @Override

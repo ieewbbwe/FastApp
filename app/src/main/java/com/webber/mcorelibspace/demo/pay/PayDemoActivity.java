@@ -28,11 +28,11 @@ public class PayDemoActivity extends AppCompatActivity {
     }
 
     private void aliPay() {
-
+        //new PayHelper(PayDemoActivity.this).aliPrePay("001", 0.01);
     }
 
     private void wxPay() {
-
+        //new PayHelper(PayDemoActivity.this).wxPrePay("002", 0.01);
     }
 
 }

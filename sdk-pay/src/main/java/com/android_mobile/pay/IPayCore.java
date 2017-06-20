@@ -15,7 +15,7 @@ public interface IPayCore {
      * @param orderNumber 订单号
      * @param incomeAmt   支付金额
      */
-    Observable<String> createOrderInfo(String orderNumber, long incomeAmt);
+    Observable<String> createOrderInfo(String orderNumber, double incomeAmt);
 
     /**
      * 支付宝支付
@@ -24,7 +24,7 @@ public interface IPayCore {
      * @param incomeAmt   支付金额
      */
     //TODO 制作成参数集合，写死不好
-    void aliPrePay(String orderNumber, long incomeAmt);
+    void aliPrePay(String orderNumber, double incomeAmt);
 
     /**
      * 微信支付
@@ -32,7 +32,7 @@ public interface IPayCore {
      * @param orderNumber 订单号
      * @param incomeAmt   支付金额
      */
-    void wxPrePay(String orderNumber, long incomeAmt);
+    void wxPrePay(String orderNumber, double incomeAmt);
 
 
 }

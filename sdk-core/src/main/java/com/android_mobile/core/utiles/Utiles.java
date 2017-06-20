@@ -85,4 +85,14 @@ public class Utiles {
         return mDisplayMetrics.heightPixels;
     }
 
+    /**
+     * 获取设备高
+     */
+    public static int getScreenWidth(Context context) {
+        DisplayMetrics mDisplayMetrics = new DisplayMetrics();
+        ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
+                .getDefaultDisplay().getMetrics(mDisplayMetrics);
+        return mDisplayMetrics.widthPixels;
+    }
+
 }

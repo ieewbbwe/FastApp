@@ -25,14 +25,17 @@ import java.lang.reflect.Method;
 
 /**
  * Created by mxh on 2017/4/26.
- * Describe：
+ * Describe：Activity基类
  */
 
 public abstract class BasicActivity extends RxAppCompatActivity implements IBasicCoreMethod {
 
     protected final String TAG = this.getClass().getSimpleName();
+    /*设备屏幕宽度*/
     private float SCREEN_WIDTH = -1;
+    /*设备屏幕高度*/
     private float SCREEN_HEIGHT = -1;
+    /*设备状态栏高度*/
     private float STATUS_BAR_HEIGHT = -1;
     private LinearLayout mProgressBar;
     protected NavigationBar mNavigationBar;
@@ -43,12 +46,6 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
     private View mBodyView;
     private FragmentManager fm;
     private Toast toast;
-
-    protected abstract void initComp();
-
-    protected abstract void initListener();
-
-    protected abstract void initData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +71,21 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
         initDefault();
         init();
     }
+
+    /**
+     * 初始化控件，查找View
+     */
+    protected abstract void initComp();
+
+    /**
+     * 初始化监听器
+     */
+    protected abstract void initListener();
+
+    /**
+     * 初始化数据
+     */
+    protected abstract void initData();
 
     public View getRootView() {
         return mRootView;
