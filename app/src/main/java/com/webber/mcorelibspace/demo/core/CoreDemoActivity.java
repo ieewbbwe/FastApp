@@ -13,7 +13,7 @@ public class CoreDemoActivity extends BaseActivity {
         setContentView(R.layout.activity_core_demo);
         mNavigationBar.hidden();
     }
-    
+
     @Override
     protected void initComp() {
 

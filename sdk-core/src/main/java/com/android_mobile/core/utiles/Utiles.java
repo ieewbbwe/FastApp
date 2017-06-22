@@ -9,6 +9,8 @@ import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
+import java.lang.reflect.Field;
+
 /**
  * Created by mxh on 2017/5/30.
  * Describe:工具类
@@ -93,6 +95,27 @@ public class Utiles {
         ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
                 .getDefaultDisplay().getMetrics(mDisplayMetrics);
         return mDisplayMetrics.widthPixels;
+    }
+
+    /**
+     * 获取状态栏高度
+     * @return 状态栏高
+     */
+    public static int getStatusBarHeight(Context context) {
+            Class<?> c = null;
+            Object obj = null;
+            Field field = null;
+            int x = 0;
+            try {
+                c = Class.forName("com.android.internal.R$dimen");
+                obj = c.newInstance();
+                field = c.getField("status_bar_height");
+                x = Integer.parseInt(field.get(obj).toString());
+                return context.getResources().getDimensionPixelSize(x);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        return 0;
     }
 
 }
