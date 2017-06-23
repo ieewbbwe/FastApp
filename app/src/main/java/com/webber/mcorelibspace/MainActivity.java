@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +22,7 @@ import com.webber.mcorelibspace.demo.net.NetDemoActivity;
 import com.webber.mcorelibspace.demo.pay.PayDemoActivity;
 import com.webber.mcorelibspace.demo.share.ShareActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import cn.sharesdk.SocialShareHelper;
@@ -138,7 +138,6 @@ public class MainActivity extends Activity {
             holder.mDemoBt.setText(demoInfos[position].title + "\n" + demoInfos[position].desc);
 
             if (listener != null) {
-                Log.d("webber", "设置监听" + position);
                 holder.mDemoBt.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -164,10 +163,13 @@ public class MainActivity extends Activity {
         }
     }
 
-    public static class DemoInfo {
+    public static class DemoInfo implements Serializable {
         private String title;
         private String desc;
         private Class<? extends Activity> demoClass;
+
+        public DemoInfo() {
+        }
 
         public DemoInfo(String title, String desc, Class<? extends Activity> demoClass) {
             this.title = title;

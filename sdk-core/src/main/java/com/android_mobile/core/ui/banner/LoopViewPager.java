@@ -135,8 +135,6 @@ public class LoopViewPager extends ViewPager {
         mOuterPageChangeListener = listener;
     }
 
-    ;
-
     public void setDotParent(ViewGroup layout) {
         this.dotParent = layout;
         layout.removeAllViews();

@@ -23,6 +23,8 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android_mobile.core.utiles.Lg;
+
 import java.util.List;
 
 /**
@@ -94,6 +96,7 @@ public class LoopPagerAdapterWrapper<T> extends BasicPageAdapter<T> {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+        Lg.print("webber", "wrapperInstantiateItem");
         int realPosition = toRealPosition(position);
         if (mBoundaryCaching) {
             ToDestroy toDestroy = mToDestroy.get(position);

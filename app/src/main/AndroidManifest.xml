@@ -39,6 +39,12 @@
         </activity>
         <activity android:name=".demo.core.CoreDemoActivity">
         </activity>
+        <activity android:name=".demo.core.router.TestRouterActivity">
+        </activity>
+        <activity android:name=".demo.core.banner.BannerActivity">
+        </activity>
+        <activity android:name=".demo.core.SelectDemoActivity">
+        </activity>
     </application>
 
 </manifest>

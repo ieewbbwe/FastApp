@@ -9,18 +9,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android_mobile.core.manager.image.ImageLoadFactory;
+import com.android_mobile.core.utiles.BitmapUtils;
 import com.android_mobile.net.ApiConstants;
 import com.android_mobile.net.NetUtils;
 import com.android_mobile.net.OnSimpleRequestCallback;
+import com.android_mobile.net.response.BaseResponse;
 import com.webber.mcorelibspace.R;
 import com.webber.mcorelibspace.demo.net.request.TopNewsRequest;
 import com.webber.mcorelibspace.demo.net.response.TopNewsResponse;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Response;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -44,18 +51,36 @@ public class NetDemoActivity extends AppCompatActivity {
         mAdapter = new TopNewsAdapter();
         mNewsRv.setAdapter(mAdapter);
 
-        findViewById(R.id.m_get_bt).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getRequest();
-            }
-        });
-        findViewById(R.id.m_post_bt).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                postRequest();
-            }
-        });
+        findViewById(R.id.m_get_bt).setOnClickListener(v -> getRequest());
+        findViewById(R.id.m_post_bt).setOnClickListener(v -> postRequest());
+        findViewById(R.id.m_upload_bt).setOnClickListener(v -> uploadRequest("/storage/emulated/0/DCIM/Camera/IMG_20170601_142846.jpg"));
+        findViewById(R.id.m_download_bt).setOnClickListener(v -> downLoadRequest());
+    }
+
+    private void downLoadRequest() {
+
+    }
+
+    private void uploadRequest(String path) {
+        File imgFile = new File(path);
+        if (imgFile.exists()) {
+            RequestBody requestFile =
+                    RequestBody.create(MediaType.parse("multipart/form-data"), BitmapUtils.processImgByteArray(path));
+            // MultipartBody.Part  和后端约定好Key，这里的partName是用image
+            MultipartBody.Part body =
+                    MultipartBody.Part.createFormData("image", imgFile.getName(), requestFile);
+            MultipartBody.Part id =
+                    MultipartBody.Part.createFormData("ID", "001");
+            ApiFactory.getFileApi().uploadImage(id, body)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new OnSimpleRequestCallback<Response<BaseResponse>>(this) {
+                        @Override
+                        public void onResponse(Response<BaseResponse> response) {
+                            Toast.makeText(NetDemoActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
     }
 
     private void postRequest() {

@@ -1,15 +1,29 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.webber.mcorelibspace"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -34,20 +48,24 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
-
     compile "com.android.support:appcompat-v7:$rootProject.ext.appcompatV7Version"
     compile "com.android.support:design:$rootProject.ext.designVersion"
-    compile "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //compile project(':coreLib')
     compile project(':sdk-core')
     compile project(':sdk-share')
     compile project(':sdk-location')
     compile project(':sdk-pay')
     compile project(':sdk-net')
+    // 路由功能
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.alibaba:arouter-api:1.1.0'
+    compile 'com.alibaba:arouter-annotation:1.0.3'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:multidex:1.0.1'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.1'
 }

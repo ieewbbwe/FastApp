@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.android_mobile.core.R;
 import com.android_mobile.core.manager.image.ImageLoadFactory;
 import com.android_mobile.core.utiles.CollectionUtils;
+import com.android_mobile.core.utiles.Lg;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class LoopPagerAdapter extends BasicPageAdapter<IBanner> {
 
     @Override
     public int getCount() {
-        return list.size();
+        return list == null ? 0 : list.size();
     }
 
     @Override
@@ -56,12 +57,21 @@ public class LoopPagerAdapter extends BasicPageAdapter<IBanner> {
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
+        IBanner item = list.get(position);
         View view = LayoutInflater.from(ctx).inflate(R.layout.view_banner_head, null);
         ImageView imageView = (ImageView) view.findViewById(R.id.header_imageview);
         //imageView.setImageResource(R.mipmap.img_item_default);
-        //Lg.print("andy", "广告图地址:" + list.get(position).getImageUrl());
-        ImageLoadFactory.getInstance().getImageLoadHandler().displayImage(R.mipmap.ic_img_item_default, imageView);
+        Lg.print(TAG, "广告图地址:" + item.getImageUrl());
+        ImageLoadFactory.getInstance().getImageLoadHandler().displayImage(item.getImageUrl(), imageView);
         container.addView(view);
+        if (mListener != null) {
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListener.onImageClick(position);
+                }
+            });
+        }
         return view;
     }
 

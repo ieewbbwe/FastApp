@@ -331,6 +331,40 @@ public class BitmapUtils {
     }
 
     /**
+     * 压缩图片
+     */
+    public static byte[] processImgByteArray(String imagePath) {
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;// 不把图片读到内存中,但依然可以计算出图片的大小
+            BitmapFactory.decodeFile(imagePath, options);//压缩到到bitmap为null
+            int height = options.outHeight;
+            int width = options.outWidth;
+            int inSampleSize = 1;
+            int reqWidth = 1200;
+            int reqHeight = 1200;
+            if (height > reqHeight || width > reqWidth) {
+                final int heightRatio = Math.round((float) height
+                        / (float) reqHeight);
+                final int widthRatio = Math.round((float) width / (float) reqWidth);
+                inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+            }
+            // 在内存中创建bitmap对象，这个对象按照缩放大小创建的
+            options.inSampleSize = inSampleSize;
+            options.inJustDecodeBounds = false;
+            Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
+            int degree = BitmapUtils.obtainBitmapDegree(imagePath);
+            bitmap = BitmapUtils.processBitmapRotate(bitmap, -degree);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 60, baos);
+            return baos.toByteArray();
+        } catch (Exception | OutOfMemoryError e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
      * 旋转照片
      */
     public static Bitmap processBitmapRotate(Bitmap bitmap, int degree) {
