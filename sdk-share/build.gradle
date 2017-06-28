@@ -1,14 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 16
-    buildToolsVersion '23.0.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 16
-        versionCode 69
-        versionName "2.8.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
     }
 
     signingConfigs {
@@ -21,12 +19,12 @@ android {
     }
 
     buildTypes {
-         debug{
-        	  minifyEnabled false
+        debug {
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
-        
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -37,12 +35,12 @@ android {
 
     lintOptions {
         abortOnError false
-        disable 'InconsistentArrays','DefaultLocale','OldTargetApi','GradleOverrides','MissingTranslation','UnusedResources','GoogleAppIndexingWarning'
+        disable 'InconsistentArrays', 'DefaultLocale', 'OldTargetApi', 'GradleOverrides', 'MissingTranslation', 'UnusedResources', 'GoogleAppIndexingWarning'
     }
 
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-   // compile project(':OneKeyShare')
+    // compile project(':OneKeyShare')
 }

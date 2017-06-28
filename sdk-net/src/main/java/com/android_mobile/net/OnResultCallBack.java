@@ -68,6 +68,12 @@ public abstract class OnResultCallBack<T extends Response> extends Subscriber<T>
         }
     }
 
+    /**
+     * 自定义响应数据拦截
+     *
+     * @param response 响应结果
+     * @return true pass false not
+     */
     private boolean isOk(T response) {
         if (response.body() instanceof BaseResponse) {
             return true;

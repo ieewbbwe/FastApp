@@ -11,11 +11,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiFactory extends BaseFactory {
     private static NewsApi newsApiList;
+    private static FileApi fileApiList;
 
     public static NewsApi getNewsApi() {
         if (newsApiList == null) {
             newsApiList = createApi("http://api.tianapi.com", GsonConverterFactory.create(), NewsApi.class);
         }
         return newsApiList;
+    }
+
+    public static FileApi getFileApi() {
+        if (fileApiList == null) {
+            fileApiList = createApi("127.0.0.1:8080", GsonConverterFactory.create(), FileApi.class);
+        }
+        return fileApiList;
     }
 }

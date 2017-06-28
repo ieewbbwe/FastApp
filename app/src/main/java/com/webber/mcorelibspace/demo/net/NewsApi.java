@@ -17,4 +17,5 @@ import rx.Observable;
 public interface NewsApi {
     @GET("wxnew")
     Observable<Response<TopNewsResponse>> getTopNews(@QueryMap Map<String, String> map);
+
 }

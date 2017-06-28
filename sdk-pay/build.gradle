@@ -23,6 +23,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.1.6'
+    //provided 只在编译时起作用 不打包打apk，防止类冲突
     provided project(':sdk-net')
 
 }

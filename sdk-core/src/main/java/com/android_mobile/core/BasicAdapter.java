@@ -19,10 +19,10 @@ import java.util.List;
  * @param <M> ViewHolder
  */
 public abstract class BasicAdapter<T, M extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<M> {
-    private Context mContext;
-    private LayoutInflater mInflater;
+    protected Context mContext;
+    protected LayoutInflater mInflater;
 
-    private List<T> mDataList = new ArrayList<>();
+    protected List<T> mDataList = new ArrayList<>();
     private OnItemClickListener mOnItemClickListener;
 
     public BasicAdapter(Context context) {
@@ -31,18 +31,8 @@ public abstract class BasicAdapter<T, M extends RecyclerView.ViewHolder> extends
     }
 
     @Override
-    public void onBindViewHolder(M holder, int position) {
+    public void onBindViewHolder(M holder, final int position) {
         onBindItemHolder(holder, position);
-    }
-
-    //局部刷新关键：带payload的这个onBindViewHolder方法必须实现
-    @Override
-    public void onBindViewHolder(M holder, final int position, List<Object> payloads) {
-        if (payloads.isEmpty()) {
-            onBindViewHolder(holder, position);
-        } else {
-            onBindItemHolder(holder, position, payloads);
-        }
         if (mOnItemClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -54,10 +44,6 @@ public abstract class BasicAdapter<T, M extends RecyclerView.ViewHolder> extends
     }
 
     public abstract void onBindItemHolder(M holder, int position);
-
-    public void onBindItemHolder(M holder, int position, List<Object> payloads) {
-
-    }
 
     @Override
     public int getItemCount() {

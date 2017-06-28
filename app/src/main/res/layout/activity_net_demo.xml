@@ -31,12 +31,34 @@
             android:id="@+id/m_post_bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="Post请求"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/m_get_bt"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginLeft="8dp"/>
+
+        <Button
+            android:id="@+id/m_upload_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="文件上传"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/m_post_bt"
+            android:layout_marginLeft="7dp"/>
+
+        <Button
+            android:id="@+id/m_download_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="文件下载"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/m_upload_bt"
+            android:layout_marginLeft="-8dp"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView

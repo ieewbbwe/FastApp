@@ -6,6 +6,7 @@
 4. WXPayEntryActivity这里做了修改，可以同时处理支付宝和微信的回调，并根据支付code做出响应
 5. 注意请按照需要自行添加 notifyService() 通知后端支付结果
 6. 使用方法new PayHelper().aliPrePay()
+7. 该库需要依赖网络库
 
 还有问题的，请看官网接入文档：
 支付宝支付：https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.CoadnK&treeId=204&articleId=105296&docType=1

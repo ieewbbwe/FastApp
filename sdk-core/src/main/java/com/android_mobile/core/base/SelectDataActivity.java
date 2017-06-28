@@ -124,7 +124,7 @@ public abstract class SelectDataActivity extends BaseActivity {
                         if (selectedImage != null) {
                             String uriStr = selectedImage.toString();
                             //部分机器获取的url不同 例如小米
-                            Lg.print("webber",uriStr);
+                            Lg.print("webber", uriStr);
                             if (uriStr.startsWith("file://")) {
                                 picturePath = uriStr.substring(7, uriStr.length());
                                 if (iMediaPicturesListener != null) {
@@ -209,10 +209,20 @@ public abstract class SelectDataActivity extends BaseActivity {
         }
     }
 
+    /**
+     * 设置拍照后的回调监听器
+     *
+     * @param listener 拍照回调
+     */
     public void setMediaImageListener(IMediaImageListener listener) {
         this.iMediaImageListener = listener;
     }
 
+    /**
+     * 设置选择相册图片的回调监听器
+     *
+     * @param listener 相册的回调
+     */
     public void setMediaPictureListener(IMediaPicturesListener listener) {
         this.iMediaPicturesListener = listener;
     }
