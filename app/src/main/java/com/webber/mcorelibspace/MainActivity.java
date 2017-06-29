@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.android_mobile.location.MMapView;
+import com.android_mobile.net.OkHttpFactory;
 import com.webber.mcorelibspace.demo.core.CoreDemoActivity;
 import com.webber.mcorelibspace.demo.map.MapActivity;
 import com.webber.mcorelibspace.demo.net.NetDemoActivity;
@@ -61,6 +63,7 @@ public class MainActivity extends Activity {
         mDemoRv.setAdapter(mAdapter);
         getPermission();
 
+        Log.d("picher", "" + (OkHttpFactory.getOkHttpClient().sslSocketFactory() == null));
     }
 
     private final int SDK_PERMISSION_REQUEST = 127;
