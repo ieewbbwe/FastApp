@@ -37,5 +37,5 @@ Post:
 2017.06.29 增加Https支持
 如果需要支持Https的链接，需要：
 1. 将证书放在assets目录下
-2. 在Application中 ```OkHttpFactory.setCertificates(getAssets().open("srca.cer"));```初始化
+2. 在Application中 ```OkHttpFactory.init(getAssets().open("srca.cer"));```初始化
 

@@ -23,6 +23,9 @@ android {
                 arguments = [moduleName: project.getName()]
             }
         }
+        lintOptions {
+            disable 'MissingTranslation'
+        }
         multiDexEnabled true
     }
     buildTypes {

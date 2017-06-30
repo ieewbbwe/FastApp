@@ -24,7 +24,7 @@ public class OkHttpFactory {
     private OkHttpClient client;
     private static final int TIMEOUT_READ = 60;
     private static final int TIMEOUT_CONNECTION = 60;
-    private static long DEFAULT_CACHE_SIZE = 1024 * 1024 * 100;//100m
+    private static long DEFAULT_CACHE_SIZE = 1024 * 1024 * 100;//100mb
     private static File mCacheFile;
     private static InputStream[] mCertificates;
 
@@ -39,6 +39,7 @@ public class OkHttpFactory {
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder()
                 .addInterceptor(new UserAgentInterceptor())//自定义拦截器
                 .addInterceptor(interceptor)//Log日志
+                //.addNetworkInterceptor(CachingControlInterceptor.REWRITE_RESPONSE_INTERCEPTOR)
                 .retryOnConnectionFailure(true) //失败重连
                 .readTimeout(TIMEOUT_READ, TimeUnit.SECONDS)
                 .connectTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS);
