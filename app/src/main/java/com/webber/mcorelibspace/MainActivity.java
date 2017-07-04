@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 
-import com.android_mobile.location.MMapView;
 import com.webber.mcorelibspace.demo.core.CoreDemoActivity;
 import com.webber.mcorelibspace.demo.map.MapActivity;
 import com.webber.mcorelibspace.demo.net.NetDemoActivity;
@@ -25,13 +24,9 @@ import com.webber.mcorelibspace.demo.share.ShareActivity;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import cn.sharesdk.SocialShareHelper;
-
 
 public class MainActivity extends Activity {
 
-    private SocialShareHelper socialComponent;
-    private MMapView mMapView;
     private RecyclerView mDemoRv;
 
     private DemoInfo[] DEMOS = {
@@ -41,6 +36,9 @@ public class MainActivity extends Activity {
             new DemoInfo("网络模块", "封装Retrofit，提供网络访问功能", NetDemoActivity.class),
             new DemoInfo("核心模块", "框架核心库，封装了组件基类和常用工具集", CoreDemoActivity.class)
     };
+
+    public MainActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

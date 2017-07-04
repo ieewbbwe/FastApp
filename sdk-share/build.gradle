@@ -38,7 +38,6 @@ android {
         disable 'InconsistentArrays', 'DefaultLocale', 'OldTargetApi', 'GradleOverrides', 'MissingTranslation', 'UnusedResources', 'GoogleAppIndexingWarning'
     }
 
-    buildToolsVersion '25.0.0'
 }
 
 dependencies {

@@ -83,6 +83,7 @@ public class CoreDemoActivity extends BaseActivity {
         DEMOS.add(new DemoInfo("轮播图", "/router/banner", null));
         DEMOS.add(new DemoInfo("路由测试", "/router/routerTest", null));
         DEMOS.add(new DemoInfo("文件选择", "/router/selectFile", null));
+        DEMOS.add(new DemoInfo("数据库操作", "/router/databasesDemo", null));
         mCoreDemoLrv.refresh();
     }
 

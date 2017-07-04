@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
-import com.android_mobile.core.BasicApplication;
 import com.android_mobile.core.utiles.Lg;
 import com.android_mobile.core.utiles.TimerUtils;
 import com.android_mobile.core.utiles.Utiles;
@@ -89,9 +88,9 @@ public class UncaughtException implements Thread.UncaughtExceptionHandler {
                 writer.write("\r\n");
                 writer.flush();
 
-                // 自杀后自启 需要时打开
-                /*SendRunnable sendRunnable = new SendRunnable(writer.toString());
-                new Thread(sendRunnable).start();*/
+                // 自杀后关闭所有Activity
+                SendRunnable sendRunnable = new SendRunnable(writer.toString());
+                new Thread(sendRunnable).start();
             } catch (Exception e) {
                 Lg.print(TAG, "unCaughtException:" + e.getMessage());
             } finally {
@@ -128,8 +127,10 @@ public class UncaughtException implements Thread.UncaughtExceptionHandler {
         if (!isSend) {
             isSend = true;
             //退出所有activity
-            BasicApplication.activityStack.pop().finish();
+            //BasicApplication.activityStack.pop().finish();
             android.os.Process.killProcess(android.os.Process.myPid());
+            // 自杀后自启 需要时打开
+            //restartApplication();
         }
     }
 

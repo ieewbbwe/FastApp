@@ -46,6 +46,7 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
     private View mBodyView;
     private FragmentManager fm;
     private Toast toast;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(R.layout.activity_frame);
+        context = this;
         mNavigationBar = new NavigationBar(this,
                 (ViewStub) findViewById(R.id.m_title_bar_vsb));
         mProgressBar = (LinearLayout) findViewById(R.id.m_loading_ll);
@@ -239,6 +241,10 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
             e.printStackTrace();
         }
         return vh;
+    }
+
+    public Context getBaseContext() {
+        return context;
     }
 
     @Override

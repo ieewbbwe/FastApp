@@ -61,6 +61,8 @@ RxJava生命周期管理库 https://github.com/trello/RxLifecycle
 Copyright (C) 2016 Trello
 Apache License, Version 2.0
 
+### OrmLite
+
 ## 工具类介绍（欢迎补充）
 ### Utils 基础工具类
 1. 判断系统网络情况

@@ -51,6 +51,8 @@
         </activity>
         <activity android:name=".demo.net.NetHttpsActivity">
         </activity>
+        <activity android:name=".demo.core.databases.DataBaseDemoActivity">
+        </activity>
     </application>
 
 </manifest>
