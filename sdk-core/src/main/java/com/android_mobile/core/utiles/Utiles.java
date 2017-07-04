@@ -136,9 +136,6 @@ public class Utiles {
 
     /**
      * 获取应用uid
-     * @param context
-     * @param packageName
-     * @return
      */
     public static int getAppUid(Context context) {
         try {

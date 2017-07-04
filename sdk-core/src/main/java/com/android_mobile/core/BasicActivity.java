@@ -243,7 +243,7 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
         return vh;
     }
 
-    public Context getBaseContext() {
+    public Context getThisContext(){
         return context;
     }
 

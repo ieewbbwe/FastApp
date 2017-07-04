@@ -21,7 +21,7 @@ public class NApplication extends BasicApplication {
         LocationHelper.init(getApplicationContext());
         ImageLoadFactory.init(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(UncaughtException.getInstance(getApplicationContext()));
-        //支持Https需要设置该证书
+        //支持Https需要设置该证书 不需要则不用初始化
         OkHttpFactory.init(getExternalCacheDir(), (InputStream[]) null);
         ARouter.openDebug();
         ARouter.openLog();

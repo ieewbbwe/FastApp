@@ -1,6 +1,7 @@
 package com.webber.mcorelibspace.demo.core.databases.tableBean;
 
 import com.android_mobile.core.listener.ISelectItem;
+import com.android_mobile.core.utiles.TimerUtils;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -55,7 +56,7 @@ public class UsageTimer implements ISelectItem {
      */
     @Override
     public String getName() {
-        return "uuid：" + uuid + "versionCode：" + versionCode + "openTime：" + openTime;
+        return "uuid：" + uuid + "versionCode：" + versionCode + "openTime：" + TimerUtils.formatTime(openTime);
     }
 
     /**

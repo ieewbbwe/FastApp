@@ -55,8 +55,8 @@ public class DataBaseDemoActivity extends BaseActivity {
     @Override
     protected void initListener() {
         mInsertBt.setOnClickListener(v -> {
-            mDataDao.insertUsage(new UsageTimer("" + Utiles.getAppUid(getBaseContext()),
-                    "" + Utiles.getAppVersionCode(getBaseContext()), System.currentTimeMillis()));
+            mDataDao.insertUsage(new UsageTimer("" + Utiles.getAppUid(getThisContext()),
+                    "" + Utiles.getAppVersionCode(getThisContext()), System.currentTimeMillis()));
         });
         mSearchBt.setOnClickListener(v -> {
             Observable.create((Observable.OnSubscribe<List<UsageTimer>>) subscriber -> {
@@ -66,7 +66,7 @@ public class DataBaseDemoActivity extends BaseActivity {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(usageTimers1 -> {
-                        mAdapter.addAll(usageTimers1);
+                        mAdapter.setDataList(usageTimers1);
                     });
         });
     }
