@@ -1,5 +1,6 @@
 package com.webber.mcorelibspace.demo.core.banner;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -46,6 +47,9 @@ public class BannerActivity extends BaseActivity {
     protected void initListener() {
         mBannerBv.setOnImageClickListener(pos -> {
             toast("点击了第" + pos + "个图片");
+            Intent intent = new Intent(BannerActivity.this, ShowPhotoActivity.class);
+            intent.putExtra("imgpath", iBanners.get(pos).getImageUrl());
+            startActivity(intent);
         });
     }
 

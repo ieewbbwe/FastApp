@@ -67,12 +67,14 @@ public class CoreDemoActivity extends BaseActivity {
     protected void initListener() {
         mCoreDemoLrv.setOnRefreshListener(() -> Observable.timer(2, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .map(aLong -> DEMOS).subscribe(demoInfos -> {
                     mAdapter.setDataList(demoInfos);
                     mCoreDemoLrv.refreshComplete(10);
                 }));
         mCoreDemoLrv.setOnLoadMoreListener(() -> Observable.timer(2, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .subscribe(aLong -> mCoreDemoLrv.setNoMore(false)));
         mLRecyclerViewAdapter.setOnItemClickListener((view, position) -> toast(mAdapter.getItemObject(position).getTitle()));
     }
