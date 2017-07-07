@@ -967,7 +967,7 @@ public abstract class BasicActivity extends RxAppCompatActivity
         }
         out = new File(strImgPath, fileName);
         strImgPath = strImgPath + fileName;// 该照片的绝对路径
-        Uri uri = Uri.fromFile(out);
+        Uri uri = File.fromFile(out);
         imageCaptureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         imageCaptureIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
         startActivityForResult(imageCaptureIntent, RESULT_CAPTURE_IMAGE);

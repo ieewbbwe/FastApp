@@ -8,7 +8,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'me.tatarka:gradle-retrolambda:3.2.5'
-
+        //添加apt插件
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -26,15 +27,15 @@ allprojects {
 ext {
     // Sdk and tools
     minSdkVersion = 15
-    targetSdkVersion = 25
+    targetSdkVersion = 23
     compileSdkVersion = 25
     buildToolsVersion = '25.0.2'
 
     // App dependencies
-    supportLibraryVersion = '24.2.0'
-    appcompatV7Version = "25.3.1"
-    recyclerViewVersion = "25.3.1"
-    designVersion = "25.3.1"
+    supportLibraryVersion = '23.0.2'
+    appcompatV7Version = "23.0.2"
+    recyclerViewVersion = "23.0.2"
+    designVersion = "23.0.2"
     constraintLayoutVersion = "1.0.2"
 
     //net lib

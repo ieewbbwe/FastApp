@@ -18,6 +18,7 @@ import com.android_mobile.core.listener.IMediaSoundRecordListener;
 import com.android_mobile.core.listener.IMediaVideoListener;
 import com.android_mobile.core.ui.pop.BottomPopWindows;
 import com.android_mobile.core.utiles.Lg;
+import com.android_mobile.core.utiles.MFileProvider;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -105,7 +106,7 @@ public abstract class SelectDataActivity extends BaseActivity {
         }
         out = new File(strImgPath, fileName);
         strImgPath = strImgPath + fileName;// 该照片的绝对路径
-        Uri uri = Uri.fromFile(out);
+        Uri uri = MFileProvider.getUriForFile(getThisContext(),out);
         imageCaptureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         imageCaptureIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
         startActivityForResult(imageCaptureIntent, RESULT_CAPTURE_IMAGE);
@@ -124,7 +125,7 @@ public abstract class SelectDataActivity extends BaseActivity {
                         if (selectedImage != null) {
                             String uriStr = selectedImage.toString();
                             //部分机器获取的url不同 例如小米
-                            Lg.print("webber", uriStr);
+                            Lg.print("picher", uriStr);
                             if (uriStr.startsWith("file://")) {
                                 picturePath = uriStr.substring(7, uriStr.length());
                                 if (iMediaPicturesListener != null) {

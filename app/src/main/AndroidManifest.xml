@@ -14,10 +14,21 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="svp2UBtfgLHvdz8KTA3pEbmUvlk13mB5"/>
+        <!-- 7.0 不允许传递file://URI -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.webber.mcorelibspace.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
 
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -54,6 +65,12 @@
         <activity android:name=".demo.core.databases.DataBaseDemoActivity">
         </activity>
         <activity android:name=".demo.core.banner.ShowPhotoActivity">
+        </activity>
+        <activity android:name=".demo.core.UriTestActivity">
+        </activity>
+        <activity android:name=".demo.core.framwork.FramworkActivity">
+        </activity>
+        <activity android:name=".demo.core.dagger.Dagger2Activity">
         </activity>
     </application>
 

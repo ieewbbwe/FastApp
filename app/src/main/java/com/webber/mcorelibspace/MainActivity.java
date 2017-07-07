@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.webber.mcorelibspace.demo.core.CoreDemoActivity;
 import com.webber.mcorelibspace.demo.map.MapActivity;
@@ -34,10 +35,11 @@ public class MainActivity extends Activity {
             new DemoInfo("地图模块", "使用BaiduApi进行定位，导航，路线规划等功能", MapActivity.class),
             new DemoInfo("支付模块", "支付宝支付、微信支付功能", PayDemoActivity.class),
             new DemoInfo("网络模块", "封装Retrofit，提供网络访问功能", NetDemoActivity.class),
-            new DemoInfo("核心模块", "框架核心库，封装了组件基类和常用工具集", CoreDemoActivity.class)
+            new DemoInfo("核心模块", "框架核心库，封装了组件基类和常用工具集", CoreDemoActivity.class),
     };
 
     public MainActivity() {
+
     }
 
     @Override
@@ -50,9 +52,14 @@ public class MainActivity extends Activity {
         mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent;
-                intent = new Intent(MainActivity.this, DEMOS[position].demoClass);
-                startActivity(intent);
+                Class classes = DEMOS[position].demoClass;
+                if (classes != null) {
+                    Intent intent;
+                    intent = new Intent(MainActivity.this, classes);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(MainActivity.this, "模块还未接入!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         mAdapter.setData(DEMOS);
@@ -208,3 +215,5 @@ public class MainActivity extends Activity {
     }
 
 }
+
+
