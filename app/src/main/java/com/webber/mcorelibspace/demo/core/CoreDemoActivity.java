@@ -52,13 +52,13 @@ public class CoreDemoActivity extends BaseActivity {
         mAdapter = new CoreAdapter(this);
         mLRecyclerViewAdapter = new LRecyclerViewAdapter(mAdapter);
         mCoreDemoLrv.setAdapter(mLRecyclerViewAdapter);
-        DividerDecoration divider = new DividerDecoration.Builder(this)
+        /*DividerDecoration divider = new DividerDecoration.Builder(this)
                 .setHeight(R.dimen.default_divider_height)
                 .setPadding(R.dimen.default_divider_padding)
                 .setColorResource(R.color.divide_line)
                 .build();
         mCoreDemoLrv.setHasFixedSize(true);
-        mCoreDemoLrv.addItemDecoration(divider);
+        mCoreDemoLrv.addItemDecoration(divider);*/
         mCoreDemoLrv.setFooterViewHint("拼命加载中", "没有更多内容", "网络不给力啊，点击再试一次吧");
         mCoreDemoLrv.setLayoutManager(new LinearLayoutManager(this));
     }
