@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -23,15 +24,34 @@ android {
                 arguments = [moduleName: project.getName()]
             }
         }
+        lintOptions {
+            disable 'MissingTranslation'
+        }
         multiDexEnabled true
     }
     buildTypes {
-        release {
+        debug {
+            //添加后缀标识
+            versionNameSuffix "-debug"
+            //是否混淆
             minifyEnabled false
+            //打包相关
+            zipAlignEnabled false
+            //打包时忽略没用使用的资源
+            shrinkResources false
+        }
+        release {
+            // 移除无用的resource文件
+            shrinkResources true
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    /*signingConfigs {
+
+    signingConfigs {
         debug {
             storeFile file("picher.jks")
             storePassword "151102"
@@ -44,7 +64,7 @@ android {
             keyAlias "FastApp"
             keyPassword "fastapp"
         }
-    }*/
+    }
 }
 
 dependencies {
@@ -66,6 +86,11 @@ dependencies {
     compile 'com.alibaba:arouter-annotation:1.0.3'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.1'
+    //dagger2
+    apt 'com.google.dagger:dagger-compiler:2.4'
+    compile 'com.google.dagger:dagger:2.4'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
 }

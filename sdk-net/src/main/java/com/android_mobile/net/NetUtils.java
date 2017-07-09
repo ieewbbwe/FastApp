@@ -1,5 +1,8 @@
 package com.android_mobile.net;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 
 import com.android_mobile.net.request.BaseRequest;
@@ -64,4 +67,24 @@ public class NetUtils {
         Log.d("network", "params:" + new Gson().toJson(params));
         return params;
     }
+    /**
+     * 检测网络连接是否可用
+     */
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm == null) {
+            return false;
+        }
+        NetworkInfo[] netinfo = cm.getAllNetworkInfo();
+        if (netinfo == null) {
+            return false;
+        }
+        for (NetworkInfo aNetinfo : netinfo) {
+            if (aNetinfo.isConnected()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

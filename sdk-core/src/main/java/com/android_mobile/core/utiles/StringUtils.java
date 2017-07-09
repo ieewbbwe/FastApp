@@ -9,21 +9,15 @@ import java.util.regex.Pattern;
 
 public class StringUtils {
     public static final String DEFAULT_DOUBLE_FORMAT = "#0.00";
-
     //6~18位数字或字符或两者组合
     public static final String PATTERN_NUM_CHARS = "^[a-zA-Z0-9]{0,10}$";
-
-    //public static final String PATTERN_NUM_CHARS = "^[\\da-zA-Z]{0,10}$";
     //6~18位数字、字符组合
     public static final String PATTERN_NUM$$CHARS = "^(?!^\\d+$)(?!^[a-zA-Z]+$)[0-9a-zA-Z]{6,18}$";
-
-    //public static final String PATTERN_NUM$$CHARS = "^[a-zA-Z0-9]{6,18}$";
+    //邮箱
+    public static final String PATTERN_EMAIL = "^[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]$";
 
     /**
      * 判断是否为空
-     *
-     * @param obj
-     * @return
      */
     public static boolean isNull(String obj) {
         return null == obj || "".equals(obj);
@@ -31,9 +25,6 @@ public class StringUtils {
 
     /**
      * 是否为空
-     *
-     * @param value
-     * @return
      */
     public static boolean isEmpty(String value) {
         int strLen;
@@ -80,8 +71,7 @@ public class StringUtils {
      * 判断是否符合邮箱格式
      */
     public static boolean isEmail(String strEmail) {
-        String strPattern = "^[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]$";
-        Pattern p = Pattern.compile(strPattern);
+        Pattern p = Pattern.compile(PATTERN_EMAIL);
         Matcher m = p.matcher(strEmail.trim());
         return m.matches();
     }

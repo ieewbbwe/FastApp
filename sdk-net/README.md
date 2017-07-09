@@ -10,8 +10,11 @@ Apache License, Version 2.0
 For example:
 Get
     URL：http://127.0.0.1:8080/springmvc_users/user?id=001
-    API：@GET("springmvc_users/user")
-         Observable<Response<User>> getUserInfo(@Query("id") String userId);
+    API：
+```
+    @GET("springmvc_users/user")
+    Observable<Response<User>> getUserInfo(@Query("id") String userId);
+
     BaseFactory.getUserApi().getUserInfo("001")
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
@@ -26,5 +29,13 @@ Get
                                  complete();
                              }
                          });
+```
 Post:
+
+#变更记录
+
+2017.06.29 增加Https支持
+如果需要支持Https的链接，需要：
+1. 将证书放在assets目录下
+2. 在Application中 ```OkHttpFactory.init(getAssets().open("srca.cer"));```初始化
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_home"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/m_main_content_fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/line_normal"/>
+
+        <RadioGroup
+            android:id="@+id/menu_panel_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_white"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/m_home_all_rb"
+                style="@style/bottom_bar_style"
+                android:drawableTop="@mipmap/ic_launcher"
+                android:text="模块1"/>
+
+            <RadioButton
+                android:id="@+id/m_home_job_rb"
+                style="@style/bottom_bar_style"
+                android:drawableTop="@mipmap/ic_launcher"
+                android:text="模块2"/>
+
+
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

@@ -67,12 +67,14 @@ public class CoreDemoActivity extends BaseActivity {
     protected void initListener() {
         mCoreDemoLrv.setOnRefreshListener(() -> Observable.timer(2, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .map(aLong -> DEMOS).subscribe(demoInfos -> {
                     mAdapter.setDataList(demoInfos);
                     mCoreDemoLrv.refreshComplete(10);
                 }));
         mCoreDemoLrv.setOnLoadMoreListener(() -> Observable.timer(2, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .subscribe(aLong -> mCoreDemoLrv.setNoMore(false)));
         mLRecyclerViewAdapter.setOnItemClickListener((view, position) -> toast(mAdapter.getItemObject(position).getTitle()));
     }
@@ -80,9 +82,13 @@ public class CoreDemoActivity extends BaseActivity {
     @Override
     protected void initData() {
         DEMOS = new ArrayList<>();
+        DEMOS.add(new DemoInfo("基础Activity+Fragment框架", "/router/framwork", null));
         DEMOS.add(new DemoInfo("轮播图", "/router/banner", null));
         DEMOS.add(new DemoInfo("路由测试", "/router/routerTest", null));
         DEMOS.add(new DemoInfo("文件选择", "/router/selectFile", null));
+        DEMOS.add(new DemoInfo("数据库操作", "/router/databasesDemo", null));
+        DEMOS.add(new DemoInfo("7.0 URI测试", "/router/uriTest", null));
+        DEMOS.add(new DemoInfo("dagger2", "/router/dagger", null));
         mCoreDemoLrv.refresh();
     }
 

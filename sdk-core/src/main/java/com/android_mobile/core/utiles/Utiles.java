@@ -1,6 +1,7 @@
 package com.android_mobile.core.utiles;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -116,6 +117,35 @@ public class Utiles {
                 e1.printStackTrace();
             }
         return 0;
+    }
+
+    /**
+     * 获取当前程序的版本号
+     */
+    public int getVersionCode(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        PackageInfo packInfo = null;
+        try {
+            packInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
+            return packInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    /**
+     * 获取应用uid
+     */
+    public static int getAppUid(Context context) {
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            ApplicationInfo applicationInfo = packageInfo.applicationInfo;
+            return applicationInfo.uid;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 
 }

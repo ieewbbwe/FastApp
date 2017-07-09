@@ -1,4 +1,4 @@
-package com.webber.mcorelibspace.demo.net;
+package com.webber.mcorelibspace.demo.net.api;
 
 import com.webber.mcorelibspace.demo.net.response.TopNewsResponse;
 

@@ -10,6 +10,6 @@
     <com.android_mobile.core.ui.banner.BannerView
         android:id="@+id/m_banner_bv"
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:layout_height="200dp"/>
 
 </RelativeLayout>
