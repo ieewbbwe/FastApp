@@ -81,16 +81,16 @@ dependencies {
     compile project(':sdk-pay')
     compile project(':sdk-net')
     // 路由功能
+    //dagger2 只在编译时产出class 不打包到apk
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.alibaba:arouter-api:1.1.0'
     compile 'com.alibaba:arouter-annotation:1.0.3'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.google.dagger:dagger:2.11'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.1'
-    //dagger2
-   /* apt 'com.google.dagger:dagger-compiler:2.4'
-    compile 'com.google.dagger:dagger:2.4'
-    compile 'org.glassfish:javax.annotation:10.0-b28'*/
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
 }

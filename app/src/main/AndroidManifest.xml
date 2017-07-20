@@ -72,6 +72,15 @@
         </activity>
         <activity android:name=".demo.core.dagger.Dagger2Activity">
         </activity>
+        <activity android:name=".demo.demos.SomeDemoActivity">
+        </activity>
+
+        <service
+            android:name=".demo.demos.DemoService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <receiver android:name=".demo.demos.MyReceiver"/>
     </application>
 
 </manifest>

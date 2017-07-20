@@ -9,6 +9,8 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.android_mobile.core.base.BaseActivity;
 import com.webber.mcorelibspace.R;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -23,13 +25,17 @@ public class Dagger2Activity extends BaseActivity implements Dagger2Contract.Vie
     Button mLoginBt;
     @Bind(R.id.m_login_msg_tv)
     TextView mLoginMsgTv;
-    private Dagger2Presenter dagger2Presenter;
+
+    @Inject
+    Dagger2Presenter dagger2Presenter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger2);
-        dagger2Presenter = new Dagger2Presenter(this);
+        //dagger2Presenter = new Dagger2Presenter(this);
+
     }
 
     /**

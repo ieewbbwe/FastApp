@@ -14,7 +14,6 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.android_mobile.core.BasicAdapter;
 import com.android_mobile.core.base.BaseActivity;
 import com.android_mobile.core.utiles.Lg;
-import com.github.jdsjlzx.ItemDecoration.DividerDecoration;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
 import com.webber.mcorelibspace.MainActivity.DemoInfo;

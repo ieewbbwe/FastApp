@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.webber.mcorelibspace.demo.core.CoreDemoActivity;
+import com.webber.mcorelibspace.demo.demos.SomeDemoActivity;
 import com.webber.mcorelibspace.demo.map.MapActivity;
 import com.webber.mcorelibspace.demo.net.NetDemoActivity;
 import com.webber.mcorelibspace.demo.pay.PayDemoActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
             new DemoInfo("支付模块", "支付宝支付、微信支付功能", PayDemoActivity.class),
             new DemoInfo("网络模块", "封装Retrofit，提供网络访问功能", NetDemoActivity.class),
             new DemoInfo("核心模块", "框架核心库，封装了组件基类和常用工具集", CoreDemoActivity.class),
+            new DemoInfo("demo", "随手的一些demo", SomeDemoActivity.class),
     };
 
     public MainActivity() {
