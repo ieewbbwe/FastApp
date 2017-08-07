@@ -80,7 +80,11 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
         <receiver android:name=".demo.demos.MyReceiver"/>
+
+        <activity android:name=".demo.mvp.MVPActivity">
+        </activity>
     </application>
 
 </manifest>
