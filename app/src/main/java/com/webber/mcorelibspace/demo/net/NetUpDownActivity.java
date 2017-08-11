@@ -24,8 +24,8 @@ public class NetUpDownActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net_up_down);
-        findViewById(R.id.m_upload_bt).setOnClickListener(v -> uploadRequest("/storage/emulated/0/DCIM/Camera/IMG_20170601_142846.jpg"));
-        findViewById(R.id.m_download_bt).setOnClickListener(v -> downLoadRequest());
+        //findViewById(R.id.m_upload_bt).setOnClickListener(v -> uploadRequest("/storage/emulated/0/DCIM/Camera/IMG_20170601_142846.jpg"));
+        //findViewById(R.id.m_download_bt).setOnClickListener(v -> downLoadRequest());
     }
 
     private void downLoadRequest() {
