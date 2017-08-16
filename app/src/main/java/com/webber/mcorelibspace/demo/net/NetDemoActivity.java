@@ -25,7 +25,7 @@ public class NetDemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_net_demo);
         mNetDemoRlv = (RecyclerView) findViewById(R.id.m_net_demo_rlv);
         mNetDemoRlv.setLayoutManager(new LinearLayoutManager(this));
-        demoAdapter = new MainActivity().new DemoAdapter();
+        demoAdapter = new MainActivity.DemoAdapter();
         demoAdapter.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent;
             intent = new Intent(NetDemoActivity.this, DEMOS[position].getDemoClass());

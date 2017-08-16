@@ -120,7 +120,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
+    public static class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
 
         private AdapterView.OnItemClickListener listener;
         private DemoInfo[] demoInfos;
@@ -172,7 +172,7 @@ public class MainActivity extends Activity {
     public static class DemoInfo implements Serializable {
         private String title;
         private String desc;
-        private Class<? extends Activity> demoClass;
+        public Class<? extends Activity> demoClass;
 
         public DemoInfo() {
         }
