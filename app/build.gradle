@@ -93,4 +93,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.1'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
 }
