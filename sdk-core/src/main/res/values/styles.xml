@@ -30,4 +30,10 @@
         <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
         <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
     </style>
+
+    <!--用于级联菜单弹出动画-->
+    <style name="pop_anim">
+        <item name="android:windowEnterAnimation">@anim/pop_up_to_down</item>
+        <item name="android:windowExitAnimation">@anim/pop_down_to_up</item>
+    </style>
 </resources>

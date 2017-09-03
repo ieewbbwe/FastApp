@@ -85,6 +85,12 @@
 
         <activity android:name=".demo.mvp.MVPActivity">
         </activity>
+        <activity android:name=".demo.demos.fourcomponent.FourComponentActivity">
+        </activity>
+        <activity android:name=".demo.demos.primary.ReflectActivity">
+        </activity>
+        <activity android:name=".demo.core.menu.LevelMenuActivity">
+        </activity>
     </application>
 
 </manifest>

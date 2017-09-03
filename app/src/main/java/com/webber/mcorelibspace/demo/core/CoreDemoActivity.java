@@ -88,6 +88,7 @@ public class CoreDemoActivity extends BaseActivity {
         DEMOS.add(new DemoInfo("数据库操作", "/router/databasesDemo", null));
         DEMOS.add(new DemoInfo("7.0 URI测试", "/router/uriTest", null));
         DEMOS.add(new DemoInfo("dagger2", "/router/dagger", null));
+        DEMOS.add(new DemoInfo("级联菜单", "/router/levelMenu", null));
         mCoreDemoLrv.refresh();
     }
 

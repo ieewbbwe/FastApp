@@ -6,12 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.webber.mcorelibspace.demo.demos.SomeDemoActivity">
+    tools:context="com.webber.mcorelibspace.demo.demos.primary.ReflectActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/m_some_demo_rv"
+    <Button
+        android:id="@+id/m_reflect_bt"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:text="点击"/>
 
-
+    <TextView
+        android:id="@+id/m_reflect_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.webber.mcorelibspace.demo.demos.SomeDemoActivity">
+    tools:context="com.webber.mcorelibspace.demo.core.menu.LevelMenuActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/m_some_demo_rv"
+    <include layout="@layout/layout_menu_filter_head"/>
+
+    <View
+        android:id="@+id/m_shown_space"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-
 </LinearLayout>

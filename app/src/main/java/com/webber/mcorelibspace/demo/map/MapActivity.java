@@ -31,7 +31,7 @@ public class MapActivity extends AppCompatActivity {
         mMapRv = (RecyclerView) findViewById(R.id.m_map_rv);
         mMapRv.setLayoutManager(new LinearLayoutManager(this));
 
-        demoAdapter = new MainActivity().new DemoAdapter();
+        demoAdapter = new MainActivity.DemoAdapter();
         demoAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
