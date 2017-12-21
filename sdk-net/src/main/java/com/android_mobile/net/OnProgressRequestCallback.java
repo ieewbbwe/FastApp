@@ -1,7 +1,6 @@
 package com.android_mobile.net;
 
 import android.content.Context;
-import android.util.Log;
 
 import retrofit2.Response;
 
@@ -12,22 +11,40 @@ import retrofit2.Response;
 
 public abstract class OnProgressRequestCallback<T extends Response> extends OnSimpleRequestCallback<T> {
 
+    private final Context mContext;
+    private LoadingDialog mLoadingDialog;
+
     public OnProgressRequestCallback(Context context) {
-        super(context);
+        this.mContext = context;
     }
 
     @Override
     public void onStart() {
         super.onStart();
-    }
-
-    @Override
-    public void onCompleted() {
-        super.onCompleted();
+        if (mContext != null) {
+            showProgressDialog();
+        }
     }
 
     @Override
     public void onFinish() {
-        Log.d("network", "onFinish");
+        if (mContext != null) {
+            hideProgressDialog();
+        }
+    }
+
+    private void hideProgressDialog() {
+        if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
+            mLoadingDialog.dismiss();
+        }
+    }
+
+    private void showProgressDialog() {
+        if (mLoadingDialog == null) {
+            mLoadingDialog = new LoadingDialog(mContext);
+        }
+        if (!mLoadingDialog.isShowing()) {
+            mLoadingDialog.show();
+        }
     }
 }

@@ -248,14 +248,18 @@ public abstract class BasicActivity extends RxAppCompatActivity implements IBasi
     }
 
     @Override
-    public void displayProgressBar() {
-        mProgressBar.bringToFront();
-        mProgressBar.setVisibility(View.VISIBLE);
+    public void displayProgressBar(boolean needLoading) {
+        if(needLoading){
+            mProgressBar.bringToFront();
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
     public void hideProgressBar() {
-        mProgressBar.setVisibility(View.GONE);
+        if(mProgressBar.getVisibility() == View.VISIBLE){
+            mProgressBar.setVisibility(View.GONE);
+        }
     }
 
     public void exitAppWithToast() {

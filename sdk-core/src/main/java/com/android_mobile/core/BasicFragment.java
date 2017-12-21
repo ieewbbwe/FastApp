@@ -83,7 +83,7 @@ public abstract class BasicFragment extends RxFragment implements IBasicCoreMeth
 
     @Override
     public void displayProgressBar() {
-        activity.displayProgressBar();
+        activity.displayProgressBar(needLoading);
     }
 
     @Override

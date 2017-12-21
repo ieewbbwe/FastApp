@@ -53,9 +53,9 @@ ext {
     premissionVersion = "1.0.3"
 
     //Rx Lib
-    rxJavaVersion = "1.1.0"
+    rxJavaVersion = "2.1.0"
     rxJavaAdapterVersion = "2.0.2"
-    rxAndroidVersion = "1.1.0"
+    rxAndroidVersion = "2.0.1"
     rxLifeVersion = "0.3.1"
     rxBindingVersion = "0.4.0"
     retrofitLogVersion = "3.6.0"

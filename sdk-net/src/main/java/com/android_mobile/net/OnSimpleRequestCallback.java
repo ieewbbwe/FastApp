@@ -15,20 +15,8 @@ import retrofit2.Response;
 
 public abstract class OnSimpleRequestCallback<T extends Response> extends OnResultCallBack<T> {
 
-    public OnSimpleRequestCallback(Context context) {
-        super(context);
-    }
-
-    @Override
-    public void onFailed(int code, String message) {
-        Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
-        Log.d("network", String.format("onFailed respCode：%s->> respMessage：%s", code, message));
-    }
-
-    @Override
-    public void onException(String message) {
-        Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
-        Log.d("network", "onException " + message);
+    public OnSimpleRequestCallback() {
+        super();
     }
 
     @Override

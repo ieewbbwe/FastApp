@@ -31,7 +31,7 @@ public interface IBasicCoreMethod {
     /**
      * 显示加载进度
      */
-    void displayProgressBar();
+    void displayProgressBar(boolean needLoading);
 
     /**
      * 隐藏加载进度

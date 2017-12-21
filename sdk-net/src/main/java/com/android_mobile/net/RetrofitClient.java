@@ -20,8 +20,8 @@ public enum RetrofitClient {
                 .client(OkHttpFactory.getOkHttpClient())
                 //baseUrl
                 .baseUrl(ApiConstants.BASE_URL)
-                //gson转化器
-                .addConverterFactory(GsonConverterFactory.create())
+                //自定义Gson转化器
+                .addConverterFactory(CustomerGsonFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 //创建
                 .build();
