@@ -18,11 +18,5 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('src/main/jniLibs/baidumapapi_base_v4_3_1.jar')
-    compile files('src/main/jniLibs/baidumapapi_cloud_v4_3_1.jar')
-    compile files('src/main/jniLibs/baidumapapi_map_v4_3_1.jar')
-    compile files('src/main/jniLibs/baidumapapi_radar_v4_3_1.jar')
-    compile files('src/main/jniLibs/baidumapapi_search_v4_3_1.jar')
-    compile files('src/main/jniLibs/baidumapapi_util_v4_3_1.jar')
-    compile files('src/main/jniLibs/locSDK_6.13.jar')
+    compile files('src/main/jniLibs/BaiduLBS_Android.jar')
 }

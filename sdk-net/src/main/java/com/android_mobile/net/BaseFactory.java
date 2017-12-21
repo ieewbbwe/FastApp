@@ -1,9 +1,10 @@
 package com.android_mobile.net;
 
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
 import retrofit2.Converter;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 
 /**
  * Created by mxh on 2016/11/18.
@@ -16,7 +17,7 @@ public class BaseFactory {
         Retrofit.Builder mBuilder = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(factory)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create());
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
         return mBuilder.client(OkHttpFactory.getOkHttpClient()).build().create(t);
     }
 

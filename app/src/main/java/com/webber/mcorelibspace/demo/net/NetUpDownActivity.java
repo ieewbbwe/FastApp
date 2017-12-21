@@ -16,6 +16,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Response;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class NetUpDownActivity extends AppCompatActivity {
@@ -45,11 +46,8 @@ public class NetUpDownActivity extends AppCompatActivity {
             ApiFactory.getFileApi().uploadImage(id, body)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new OnSimpleRequestCallback<Response<BaseResponse>>(this) {
-                        @Override
-                        public void onResponse(Response<BaseResponse> response) {
-                            Toast.makeText(NetUpDownActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
-                        }
+                    .subscribe(baseResponseResponse -> {
+                        Toast.makeText(NetUpDownActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
                     });
         }
     }

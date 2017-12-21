@@ -2,8 +2,6 @@ package com.android_mobile.core.base;
 
 import com.android_mobile.core.BasicActivity;
 
-import org.reactivestreams.Subscriber;
-
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.Observer;

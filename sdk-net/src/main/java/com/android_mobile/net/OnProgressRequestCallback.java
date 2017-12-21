@@ -19,14 +19,6 @@ public abstract class OnProgressRequestCallback<T extends Response> extends OnSi
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        if (mContext != null) {
-            showProgressDialog();
-        }
-    }
-
-    @Override
     public void onFinish() {
         if (mContext != null) {
             hideProgressDialog();

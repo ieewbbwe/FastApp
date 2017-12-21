@@ -1,8 +1,8 @@
 package com.android_mobile.net;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by mxh on 2016/11/18.
@@ -22,7 +22,7 @@ public enum RetrofitClient {
                 .baseUrl(ApiConstants.BASE_URL)
                 //自定义Gson转化器
                 .addConverterFactory(CustomerGsonFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 //创建
                 .build();
     }

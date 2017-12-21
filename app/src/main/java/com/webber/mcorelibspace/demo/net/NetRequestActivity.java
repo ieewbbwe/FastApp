@@ -23,9 +23,8 @@ import java.util.List;
 
 import retrofit2.Response;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 import rx.schedulers.Schedulers;
-
-import static rx.Completable.complete;
 
 public class NetRequestActivity extends AppCompatActivity {
 
@@ -58,17 +57,12 @@ public class NetRequestActivity extends AppCompatActivity {
         ApiFactory.getNewsApi().getTopNews(NetUtils.getParams(mTopNewsRequest))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new OnSimpleRequestCallback<Response<TopNewsResponse>>(NetRequestActivity.this) {
+                .subscribe(new Action1<Response<TopNewsResponse>>() {
                     @Override
-                    public void onResponse(Response<TopNewsResponse> response) {
+                    public void call(Response<TopNewsResponse> topNewsResponseResponse) {
                         mDatas.clear();
-                        mDatas.addAll(response.body().newslist);
+                        mDatas.addAll(topNewsResponseResponse.body().newslist);
                         mAdapter.notifyDataSetChanged();
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        complete();
                     }
                 });
     }

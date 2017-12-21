@@ -16,11 +16,12 @@ import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
-import rx.Observable;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by mxh on 2017/6/13.
@@ -86,9 +87,9 @@ public class PayHelper implements IPayCore {
     public Observable<String> createOrderInfo(String orderNumber, double incomeAmt) {
         return PayApiFactory.getPayApi().createAliOrderInfo(orderNumber, incomeAmt)
                 .subscribeOn(Schedulers.io())
-                .filter(new Func1<Response<RewardAliResp>, Boolean>() {
+                .filter(new Predicate<Response<RewardAliResp>>() {
                     @Override
-                    public Boolean call(Response<RewardAliResp> rewardPayRespResponse) {
+                    public boolean test(Response<RewardAliResp> rewardPayRespResponse) throws Exception {
                         if (!rewardPayRespResponse.body().isSuccess()) {
                             Toast.makeText(act, rewardPayRespResponse.body().getMessage(), Toast.LENGTH_SHORT).show();
                             return false;
@@ -96,9 +97,9 @@ public class PayHelper implements IPayCore {
                         return rewardPayRespResponse.isSuccessful()
                                 && rewardPayRespResponse.body().isSuccess();
                     }
-                }).map(new Func1<Response<RewardAliResp>, String>() {
+                }).map(new Function<Response<RewardAliResp>, String>() {
                     @Override
-                    public String call(Response<RewardAliResp> rewardPayRespResponse) {
+                    public String apply(Response<RewardAliResp> rewardPayRespResponse) throws Exception {
                         return rewardPayRespResponse.body().orderInfo;
                     }
                 });
@@ -114,9 +115,9 @@ public class PayHelper implements IPayCore {
     public void aliPrePay(final String orderNum, double incomeAmt) {
         createOrderInfo(orderNum, incomeAmt)
                 .subscribeOn(Schedulers.io())
-                .subscribe(new Action1<String>() {
+                .subscribe(new Consumer<String>() {
                     @Override
-                    public void call(String s) {
+                    public void accept(String s) throws Exception {
                         // 构造PayTask 对象
                         PayTask alipay = new PayTask(act);
                         // 调用支付接口，获取支付结果
@@ -168,9 +169,9 @@ public class PayHelper implements IPayCore {
                 //调度到io线程
                 .subscribeOn(Schedulers.io())
                 //接收到响应信息 过滤掉响应失败的情况
-                .filter(new Func1<Response<RewardWxResp>, Boolean>() {
+                .filter(new Predicate<Response<RewardWxResp>>() {
                     @Override
-                    public Boolean call(Response<RewardWxResp> rewardWxRespResponse) {
+                    public boolean test(Response<RewardWxResp> rewardWxRespResponse) throws Exception {
                         if (!rewardWxRespResponse.body().isSuccess()) {
                             Toast.makeText(act, rewardWxRespResponse.body().getMessage(), Toast.LENGTH_SHORT).show();
                             return false;
@@ -180,14 +181,14 @@ public class PayHelper implements IPayCore {
                     }
                 })
                 //转换Response<RewardWxResp> 为RewardWxResp 方便调用
-                .map(new Func1<Response<RewardWxResp>, RewardWxResp>() {
+                .map(new Function<Response<RewardWxResp>, RewardWxResp>() {
                     @Override
-                    public RewardWxResp call(Response<RewardWxResp> rewardWxRespResponse) {
+                    public RewardWxResp apply(Response<RewardWxResp> rewardWxRespResponse) throws Exception {
                         return rewardWxRespResponse.body();
                     }
-                }).map(new Func1<RewardWxResp, PayReq>() {
+                }).map(new Function<RewardWxResp, PayReq>() {
             @Override
-            public PayReq call(RewardWxResp rewardWxResp) {
+            public PayReq apply(RewardWxResp rewardWxResp) throws Exception {
                 PayReq req = new PayReq();
                 req.appId = rewardWxResp.getAppid();
                 req.partnerId = rewardWxResp.getPartnerid();
@@ -197,9 +198,9 @@ public class PayHelper implements IPayCore {
                 req.timeStamp = rewardWxResp.getTimestamp();
                 return req;
             }
-        }).subscribe(new Action1<PayReq>() {
+        }).subscribe(new Consumer<PayReq>() {
             @Override
-            public void call(PayReq payReq) {
+            public void accept(PayReq payReq) throws Exception {
                 final IWXAPI msgApi = WXAPIFactory.createWXAPI(act, null);
                 msgApi.registerApp(PayConstants.WX_APP_ID);
                 if (!msgApi.isWXAppInstalled()) {

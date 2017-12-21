@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
+import org.reactivestreams.Subscription;
+
 import retrofit2.Response;
 
 
@@ -21,6 +23,16 @@ public abstract class OnSimpleRequestCallback<T extends Response> extends OnResu
 
     @Override
     public void onFinish() {
+
+    }
+
+    @Override
+    public void onSubscribe(Subscription s) {
+
+    }
+
+    @Override
+    public void onComplete() {
 
     }
 }

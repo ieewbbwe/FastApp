@@ -4,15 +4,15 @@ import android.content.Context;
 
 import com.android_mobile.net.response.BaseResponse;
 
-import retrofit2.Response;
-import rx.Subscriber;
+import org.reactivestreams.Subscriber;
 
+import retrofit2.Response;
 /**
  * Created by mxh on 2016/11/22.
  * Describe：回调结果封装类
  */
 
-public abstract class OnResultCallBack<T extends Response> extends Subscriber<T> {
+public abstract class OnResultCallBack<T extends Response> implements Subscriber<T> {
 
     /**
      * When response succeed
@@ -28,16 +28,6 @@ public abstract class OnResultCallBack<T extends Response> extends Subscriber<T>
 
     public OnResultCallBack() {
 
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    public void onCompleted() {
-        onFinish();
     }
 
     @Override

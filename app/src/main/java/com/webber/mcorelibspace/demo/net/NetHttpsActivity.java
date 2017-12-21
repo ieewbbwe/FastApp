@@ -11,6 +11,7 @@ import com.webber.mcorelibspace.demo.net.response.QueryProductResponse;
 
 import retrofit2.Response;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class NetHttpsActivity extends AppCompatActivity {
@@ -36,12 +37,9 @@ public class NetHttpsActivity extends AppCompatActivity {
                 .getSearchProduct(q, true, "json")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new OnProgressRequestCallback<Response<QueryProductResponse>>(NetHttpsActivity.this) {
-                    @Override
-                    public void onResponse(Response<QueryProductResponse> response) {
-                        Toast.makeText(NetHttpsActivity.this, "请求到" + response.body()
-                                .getQuery().getResults().getProduct().size() + "条数据", Toast.LENGTH_SHORT).show();
-                    }
+                .subscribe(queryProductResponseResponse -> {
+                    Toast.makeText(NetHttpsActivity.this, "请求到" + queryProductResponseResponse.body()
+                            .getQuery().getResults().getProduct().size() + "条数据", Toast.LENGTH_SHORT).show();
                 });
     }
 
