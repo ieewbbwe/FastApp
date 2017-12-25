@@ -22,7 +22,9 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-
+/**
+ * 支持手势缩放的ImageView
+ */
 public class PhotoView extends ImageView implements IPhotoView {
 
 	private final PhotoViewAttacher mAttacher;

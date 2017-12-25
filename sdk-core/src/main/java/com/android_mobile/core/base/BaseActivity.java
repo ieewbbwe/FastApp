@@ -1,5 +1,8 @@
 package com.android_mobile.core.base;
 
+import android.os.Bundle;
+import android.os.PersistableBundle;
+
 import com.android_mobile.core.BasicActivity;
 
 import io.reactivex.Completable;
@@ -8,6 +11,7 @@ import io.reactivex.Observer;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
@@ -20,11 +24,29 @@ import io.reactivex.schedulers.Schedulers;
 
 public abstract class BaseActivity extends BasicActivity {
 
+    private CompositeDisposable compositeDisposable;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+        compositeDisposable = new CompositeDisposable();
+    }
+
     public void completableBridge(Completable completable, Action action, Consumer<Throwable> throwableConsumer, boolean needLoading) {
-        completable.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
+        addReference(completable.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io())
                 .doOnSubscribe(getOnSubscribe(needLoading))
                 .doAfterTerminate(getOnAfterTerminate())
-                .subscribe(action, throwableConsumer);
+                .subscribe(action, throwableConsumer));
+    }
+
+    /**
+     * 管理所有事件，类销毁后移除这些事件，防止回掉错误
+     * @param subscribe 事件
+     */
+    private void addReference(Disposable subscribe) {
+        if(compositeDisposable != null){
+            compositeDisposable.add(subscribe);
+        }
     }
 
     public void singleBridge(Single single, SingleObserver<?> singleObserver, boolean needLoading) {
@@ -59,5 +81,13 @@ public abstract class BaseActivity extends BasicActivity {
                 displayProgressBar(needLoading);
             }
         };
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(compositeDisposable != null ){
+            compositeDisposable.clear();
+        }
     }
 }
