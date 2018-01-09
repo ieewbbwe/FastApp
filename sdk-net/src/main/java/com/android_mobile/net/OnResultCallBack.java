@@ -1,7 +1,5 @@
 package com.android_mobile.net;
 
-import android.content.Context;
-
 import com.android_mobile.net.response.BaseResponse;
 
 import org.reactivestreams.Subscriber;
