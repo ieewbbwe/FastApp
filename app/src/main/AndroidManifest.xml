@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name=".NApplication"
         android:allowBackup="true"
@@ -36,38 +41,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".demo.share.ShareActivity"></activity>
-        <activity android:name=".demo.map.MapActivity"></activity>
-        <activity android:name=".demo.map.LocationDemoActivity"></activity>
-        <activity android:name=".demo.map.MapDemoActivity"></activity>
-        <activity android:name=".demo.pay.PayDemoActivity"></activity>
-        <activity android:name=".demo.net.NetDemoActivity"></activity>
-        <activity android:name=".demo.core.CoreDemoActivity"></activity>
-        <activity android:name=".demo.core.router.TestRouterActivity"></activity>
-        <activity android:name=".demo.core.banner.BannerActivity"></activity>
-        <activity android:name=".demo.core.SelectDemoActivity"></activity>
-        <activity android:name=".demo.net.NetRequestActivity"></activity>
-        <activity android:name=".demo.net.NetUpDownActivity"></activity>
-        <activity android:name=".demo.net.NetHttpsActivity"></activity>
-        <activity android:name=".demo.core.databases.DataBaseDemoActivity"></activity>
-        <activity android:name=".demo.core.banner.ShowPhotoActivity"></activity>
-        <activity android:name=".demo.core.UriTestActivity"></activity>
-        <activity android:name=".demo.core.framwork.FramworkActivity"></activity>
-        <activity android:name=".demo.core.dagger.Dagger2Activity"></activity>
-        <activity android:name=".demo.demos.SomeDemoActivity"></activity>
+        <activity android:name=".demo.share.ShareActivity" />
+        <activity android:name=".demo.map.MapActivity" />
+        <activity android:name=".demo.map.LocationDemoActivity" />
+        <activity android:name=".demo.map.MapDemoActivity" />
+        <activity android:name=".demo.pay.PayDemoActivity" />
+        <activity android:name=".demo.net.NetDemoActivity" />
+        <activity android:name=".demo.core.CoreDemoActivity" />
+        <activity android:name=".demo.core.router.TestRouterActivity" />
+        <activity android:name=".demo.core.banner.BannerActivity" />
+        <activity android:name=".demo.core.SelectDemoActivity" />
+        <activity android:name=".demo.net.NetRequestActivity" />
+        <activity android:name=".demo.net.NetUpDownActivity" />
+        <activity android:name=".demo.net.NetHttpsActivity" />
+        <activity android:name=".demo.core.databases.DataBaseDemoActivity" />
+        <activity android:name=".demo.core.banner.ShowPhotoActivity" />
+        <activity android:name=".demo.core.UriTestActivity" />
+        <activity android:name=".demo.core.framwork.FramworkActivity" />
+        <activity android:name=".demo.core.dagger.Dagger2Activity" />
+        <activity android:name=".demo.demos.SomeDemoActivity" />
 
         <service
             android:name=".demo.demos.DemoService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <receiver android:name=".demo.demos.MyReceiver" />
 
-        <activity android:name=".demo.mvp.MVPActivity"></activity>
-        <activity android:name=".demo.demos.fourcomponent.FourComponentActivity"></activity>
-        <activity android:name=".demo.demos.primary.ReflectActivity"></activity>
-        <activity android:name=".demo.core.menu.LevelMenuActivity"></activity>
-        <activity android:name=".demo.core.zoomimg.FullScreenImageActivity"></activity>
+        <activity android:name=".demo.mvp.MVPActivity" />
+        <activity android:name=".demo.demos.fourcomponent.FourComponentActivity" />
+        <activity android:name=".demo.demos.primary.ReflectActivity" />
+        <activity android:name=".demo.core.menu.LevelMenuActivity" />
+        <activity android:name=".demo.core.zoomimg.FullScreenImageActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"></activity>
     </application>
 
 </manifest>

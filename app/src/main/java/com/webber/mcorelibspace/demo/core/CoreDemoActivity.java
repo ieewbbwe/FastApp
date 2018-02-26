@@ -13,6 +13,7 @@ import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android_mobile.core.BasicAdapter;
 import com.android_mobile.core.base.BaseActivity;
+import com.android_mobile.core.utiles.CollectionUtils;
 import com.android_mobile.core.utiles.Lg;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
@@ -29,7 +30,7 @@ import butterknife.ButterKnife;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 
-public class CoreDemoActivity extends BaseActivity {
+public class    CoreDemoActivity extends BaseActivity {
 
     @Bind(R.id.m_core_demo_lrv)
     LRecyclerView mCoreDemoLrv;
@@ -82,6 +83,7 @@ public class CoreDemoActivity extends BaseActivity {
     protected void initData() {
         DEMOS = new ArrayList<>();
         DEMOS.add(new DemoInfo("基础Activity+Fragment框架", "/router/framwork", null));
+        DEMOS.add(new DemoInfo("MVVM 基础框架", "/router/mvvmframwork", null));
         DEMOS.add(new DemoInfo("轮播图", "/router/banner", null));
         DEMOS.add(new DemoInfo("路由测试", "/router/routerTest", null));
         DEMOS.add(new DemoInfo("文件选择", "/router/selectFile", null));

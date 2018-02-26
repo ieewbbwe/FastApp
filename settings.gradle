@@ -1,1 +1,1 @@
-include ':app',  ':sdk-core', ':sdk-location', ':sdk-share', ':sdk-pay', ':sdk-net'//, ':LRecyclerview_library',':coreLib'
+include ':app',  ':sdk-core', ':sdk-location', ':sdk-share', ':sdk-pay', ':sdk-net', ':sdk-mvvm'//, ':LRecyclerview_library',':coreLib'

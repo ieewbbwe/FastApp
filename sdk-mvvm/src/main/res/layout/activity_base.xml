@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="cn.picher.sdk_mvvm.base.ParentViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--主体内容-->
+        <ViewStub
+            android:id="@+id/m_body_vsb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inflatedId="@+id/body_root"/>
+
+        <!--失败页面-->
+        <ViewStub
+            android:id="@+id/m_error_vsb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inflatedId="@+id/body_error"/>
+    </RelativeLayout>
+</layout>

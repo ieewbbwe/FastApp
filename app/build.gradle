@@ -83,6 +83,7 @@ dependencies {
     compile project(':sdk-location')
     compile project(':sdk-pay')
     compile project(':sdk-net')
+    compile project(':sdk-mvvm')
     // 路由功能
     //dagger2 只在编译时产出class 不打包到apk
     compile 'com.jakewharton:butterknife:7.0.1'
