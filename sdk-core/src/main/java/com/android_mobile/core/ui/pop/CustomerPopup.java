@@ -22,6 +22,8 @@ import android.widget.PopupWindow;
 
 public class CustomerPopup implements PopupWindow.OnDismissListener {
 
+    //默认背景透明值
+    private static final float DEFAULT_TRANSPARENT_VALUE = 0.7f;
     private Context mContext;
     private PopupWindow mPopWindows;
     private View mContentView;
@@ -184,7 +186,7 @@ public class CustomerPopup implements PopupWindow.OnDismissListener {
                 ViewGroup parent = (ViewGroup) mDimView;
                 Drawable dim = new ColorDrawable(mDimColor);
                 dim.setBounds(0, 0, parent.getWidth(), parent.getHeight());
-                dim.setAlpha((int) (255 * 0.7));
+                dim.setAlpha((int) (255 * DEFAULT_TRANSPARENT_VALUE));
                 ViewGroupOverlay overlay = parent.getOverlay();
                 overlay.add(dim);
             }else{
