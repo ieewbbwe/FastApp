@@ -1,6 +1,9 @@
 package com.webber.mcorelibspace.demo.net;
 
 import com.android_mobile.net.BaseFactory;
+import com.android_mobile.net.UrlMgr;
+import com.google.gson.Gson;
+import com.webber.mcorelibspace.demo.net.api.DemoApi;
 import com.webber.mcorelibspace.demo.net.api.FileApi;
 import com.webber.mcorelibspace.demo.net.api.NewsApi;
 
@@ -14,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiFactory extends BaseFactory {
     private static NewsApi newsApiList;
     private static FileApi fileApiList;
+    private static DemoApi demoApi;
 
     public static <T> T createApi(String baseUrl, Class<T> t) {
         return createApi(baseUrl, GsonConverterFactory.create(), t);
@@ -31,6 +35,13 @@ public class ApiFactory extends BaseFactory {
             fileApiList = createApi("127.0.0.1:8080", GsonConverterFactory.create(), FileApi.class);
         }
         return fileApiList;
+    }
+
+    public static DemoApi getDemoApi(){
+        if(demoApi == null){
+            demoApi = createApi(UrlMgr.Service, GsonConverterFactory.create(),DemoApi.class);
+        }
+        return demoApi;
     }
 
 }

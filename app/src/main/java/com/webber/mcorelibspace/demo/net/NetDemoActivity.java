@@ -14,7 +14,8 @@ public class NetDemoActivity extends AppCompatActivity {
     private MainActivity.DemoInfo[] DEMOS = {
             new MainActivity.DemoInfo("网络请求", "使用GET、POST、DELETE、PUT进行网络请求", NetRequestActivity.class),
             new MainActivity.DemoInfo("文件上传\\下载", "上传单个文件、多个文件", NetUpDownActivity.class),
-            new MainActivity.DemoInfo("Https", "支持Https例子", NetHttpsActivity.class)
+            new MainActivity.DemoInfo("Https", "支持Https例子", NetHttpsActivity.class),
+            new MainActivity.DemoInfo("网络缓存示例", "网络请求，支持离线缓存，数据更新", NetHttpsActivity.class)
     };
     private RecyclerView mNetDemoRlv;
     private MainActivity.DemoAdapter demoAdapter;

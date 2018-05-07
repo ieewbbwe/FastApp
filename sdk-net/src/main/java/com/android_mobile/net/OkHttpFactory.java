@@ -39,7 +39,7 @@ public class OkHttpFactory {
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder()
                 .addInterceptor(new UserAgentInterceptor())//自定义拦截器
                 .addInterceptor(interceptor)//Log日志
-                //.addNetworkInterceptor(CachingControlInterceptor.REWRITE_RESPONSE_INTERCEPTOR)
+                //.addNetworkInterceptor(CacheControlInterceptor.REWRITE_RESPONSE_INTERCEPTOR)
                 .retryOnConnectionFailure(true) //失败重连
                 .readTimeout(TIMEOUT_READ, TimeUnit.SECONDS)
                 .connectTimeout(TIMEOUT_CONNECTION, TimeUnit.SECONDS);
