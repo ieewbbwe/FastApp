@@ -15,23 +15,25 @@ import com.webber.mcorelibspace.R;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 @Route(path = "/router/framwork")
 public class FramworkActivity extends BaseActivity {
 
-    @Bind(R.id.m_main_content_fl)
+    @BindView(R.id.m_main_content_fl)
     FrameLayout mMainContentFl;
-    @Bind(R.id.m_home_all_rb)
+    @BindView(R.id.m_home_all_rb)
     RadioButton mHomeAllRb;
-    @Bind(R.id.m_home_job_rb)
+    @BindView(R.id.m_home_job_rb)
     RadioButton mHomeJobRb;
-    @Bind(R.id.menu_panel_rg)
+    @BindView(R.id.menu_panel_rg)
     RadioGroup menuPanelRg;
     private String mCurrentFragmentTag;
     private int currentCheckedId;
     private FragmentManager mFragmentManager;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class FramworkActivity extends BaseActivity {
      */
     @Override
     protected void initComp() {
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
 
         mFragmentManager = getSupportFragmentManager();
     }

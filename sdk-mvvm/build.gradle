@@ -23,11 +23,12 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
     compile "com.android.support:appcompat-v7:$appcompatV7Version"
     /*响应式库框架（RxJava）*/
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
     compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
-    compile "com.trello:rxlifecycle:$rootProject.ext.rxLifeVersion"
-    compile "com.trello:rxlifecycle-components:$rootProject.ext.rxLifeVersion"
+    compile "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:$rootProject.ext.rxLifeVersion"
+    compile "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.ext.rxLifeVersion"
     compile "com.jakewharton.rxbinding:rxbinding:$rootProject.ext.rxBindingVersion"
 }

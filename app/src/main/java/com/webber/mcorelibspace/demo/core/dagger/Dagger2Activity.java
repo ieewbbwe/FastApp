@@ -11,19 +11,19 @@ import com.webber.mcorelibspace.R;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 @Route(path = "/router/dagger")
 public class Dagger2Activity extends BaseActivity implements Dagger2Contract.View {
 
-    @Bind(R.id.m_username_et)
+    @BindView(R.id.m_username_et)
     EditText mUsernameEt;
-    @Bind(R.id.m_psw_et)
+    @BindView(R.id.m_psw_et)
     EditText mPswEt;
-    @Bind(R.id.m_login_bt)
+    @BindView(R.id.m_login_bt)
     Button mLoginBt;
-    @Bind(R.id.m_login_msg_tv)
+    @BindView(R.id.m_login_msg_tv)
     TextView mLoginMsgTv;
 
     @Inject

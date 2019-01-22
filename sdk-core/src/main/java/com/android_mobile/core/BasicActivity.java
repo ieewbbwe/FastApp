@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.android_mobile.core.ui.EmptyLayout;
 import com.android_mobile.core.ui.NavigationBar;
 import com.android_mobile.core.utiles.Lg;
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

@@ -39,10 +39,11 @@ android {
             zipAlignEnabled false
             //打包时忽略没用使用的资源
             shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             // 移除无用的resource文件
-            shrinkResources true
+            shrinkResources false
             //混淆
             minifyEnabled false
             //Zipalign优化
@@ -75,6 +76,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //noinspection GradleCompatible
     compile "com.android.support:appcompat-v7:$rootProject.ext.appcompatV7Version"
     compile "com.android.support:design:$rootProject.ext.designVersion"
     //compile project(':coreLib')
@@ -86,16 +88,14 @@ dependencies {
     compile project(':sdk-mvvm')
     // 路由功能
     //dagger2 只在编译时产出class 不打包到apk
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
     compile 'com.alibaba:arouter-api:1.1.0'
     compile 'com.alibaba:arouter-annotation:1.0.3'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:support-v4:25.3.1'
     compile 'com.google.dagger:dagger:2.11'
     compile 'org.glassfish:javax.annotation:10.0-b28'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.1'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
-    compile 'com.android.support:recyclerview-v7:25.3.1'
 }

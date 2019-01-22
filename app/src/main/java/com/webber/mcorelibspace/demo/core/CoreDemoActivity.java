@@ -13,7 +13,6 @@ import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android_mobile.core.BasicAdapter;
 import com.android_mobile.core.base.BaseActivity;
-import com.android_mobile.core.utiles.CollectionUtils;
 import com.android_mobile.core.utiles.Lg;
 import com.github.jdsjlzx.recyclerview.LRecyclerView;
 import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
@@ -25,19 +24,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
+import butterknife.Unbinder;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class    CoreDemoActivity extends BaseActivity {
 
-    @Bind(R.id.m_core_demo_lrv)
+    @BindView(R.id.m_core_demo_lrv)
     LRecyclerView mCoreDemoLrv;
     private LRecyclerViewAdapter mLRecyclerViewAdapter;
 
     private List<DemoInfo> DEMOS;
     private CoreAdapter mAdapter;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class    CoreDemoActivity extends BaseActivity {
 
     @Override
     protected void initComp() {
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         mAdapter = new CoreAdapter(this);
         mLRecyclerViewAdapter = new LRecyclerViewAdapter(mAdapter);
         mCoreDemoLrv.setAdapter(mLRecyclerViewAdapter);
@@ -97,7 +98,7 @@ public class    CoreDemoActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     class CoreAdapter extends BasicAdapter<DemoInfo, CoreAdapter.ViewHolder> {
@@ -138,7 +139,7 @@ public class    CoreDemoActivity extends BaseActivity {
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
-            @Bind(R.id.m_item_bt)
+            @BindView(R.id.m_item_bt)
             Button mItemBt;
 
             public ViewHolder(View itemView) {

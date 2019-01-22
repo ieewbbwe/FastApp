@@ -12,14 +12,14 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ReflectActivity extends AppCompatActivity {
 
-    @Bind(R.id.m_reflect_bt)
+    @BindView(R.id.m_reflect_bt)
     Button mReflectBt;
-    @Bind(R.id.m_reflect_tv)
+    @BindView(R.id.m_reflect_tv)
     TextView mReflectTv;
 
     @Override

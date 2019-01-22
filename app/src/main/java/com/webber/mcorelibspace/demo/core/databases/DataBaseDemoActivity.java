@@ -14,8 +14,9 @@ import com.webber.mcorelibspace.demo.core.databases.tableBean.UsageTimer;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -23,15 +24,16 @@ import rx.schedulers.Schedulers;
 @Route(path = "/router/databasesDemo")
 public class DataBaseDemoActivity extends BaseActivity {
 
-    @Bind(R.id.m_insert_bt)
+    @BindView(R.id.m_insert_bt)
     Button mInsertBt;
-    @Bind(R.id.m_search_bt)
+    @BindView(R.id.m_search_bt)
     Button mSearchBt;
-    @Bind(R.id.m_data_rlv)
+    @BindView(R.id.m_data_rlv)
     RecyclerView mDataRv;
     private DataDao mDataDao;
     private List<UsageTimer> usageTimers = new ArrayList<>();
     private SimpleTextAdapter mAdapter;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class DataBaseDemoActivity extends BaseActivity {
      */
     @Override
     protected void initComp() {
-        ButterKnife.bind(this);
+        unbinder =  ButterKnife.bind(this);
         mDataDao = new DataDao(this);
     }
 
@@ -85,6 +87,6 @@ public class DataBaseDemoActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 }

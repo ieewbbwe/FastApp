@@ -4,20 +4,21 @@ import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.android_mobile.core.ui.NavigationBar;
 import com.android_mobile.core.utiles.Lg;
-import com.trello.rxlifecycle.components.support.RxFragment;
+import com.trello.rxlifecycle2.components.RxFragment;
 
 /**
  * Created by mxh on 2017/6/1.
  * Describe：
  */
 
-public abstract class BasicFragment extends RxFragment implements IBasicCoreMethod {
+public abstract class BasicFragment extends Fragment implements IBasicCoreMethod {
 
     private View v;
     private BasicActivity activity;

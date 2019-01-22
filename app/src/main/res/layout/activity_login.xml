@@ -19,7 +19,6 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context=".demo.core.mvvm.LoginActivity">
 
-        <!-- Login progress -->
         <ProgressBar
             android:id="@+id/login_progress"
             style="?android:attr/progressBarStyleLarge"

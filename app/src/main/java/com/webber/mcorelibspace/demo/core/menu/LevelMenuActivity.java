@@ -17,33 +17,33 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.android_mobile.core.base.BaseActivity;
 import com.webber.mcorelibspace.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 @Route(path = "/router/levelMenu")
 public class LevelMenuActivity extends BaseActivity implements View.OnClickListener {
 
-    @Bind(R.id.menu_filter_area_tv)
+    @BindView(R.id.menu_filter_area_tv)
     TextView menuFilterAreaTv;
-    @Bind(R.id.area_iv)
+    @BindView(R.id.area_iv)
     ImageView areaIv;
-    @Bind(R.id.menu_filter_area_rl)
+    @BindView(R.id.menu_filter_area_rl)
     RelativeLayout menuFilterAreaRl;
-    @Bind(R.id.menu_filter_case_type_tv)
+    @BindView(R.id.menu_filter_case_type_tv)
     TextView menuFilterCaseTypeTv;
-    @Bind(R.id.case_type_iv)
+    @BindView(R.id.case_type_iv)
     ImageView caseTypeIv;
-    @Bind(R.id.menu_filter_case_type_rl)
+    @BindView(R.id.menu_filter_case_type_rl)
     RelativeLayout menuFilterCaseTypeRl;
-    @Bind(R.id.menu_filter_sort_tv)
+    @BindView(R.id.menu_filter_sort_tv)
     TextView menuFilterSortTv;
-    @Bind(R.id.sort_iv)
+    @BindView(R.id.sort_iv)
     ImageView sortIv;
-    @Bind(R.id.menu_filter_sort_rl)
+    @BindView(R.id.menu_filter_sort_rl)
     RelativeLayout menuFilterSortRl;
-    @Bind(R.id.menu_filter_ll)
+    @BindView(R.id.menu_filter_ll)
     LinearLayout menuFilterLl;
-    @Bind(R.id.m_shown_space)
+    @BindView(R.id.m_shown_space)
     View mShadowGroup;
     private CascadingMenuPopWindow areaPopWindow;
 
