@@ -30,7 +30,7 @@ import butterknife.Unbinder;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
-public class    CoreDemoActivity extends BaseActivity {
+public class CoreDemoActivity extends BaseActivity {
 
     @BindView(R.id.m_core_demo_lrv)
     LRecyclerView mCoreDemoLrv;
