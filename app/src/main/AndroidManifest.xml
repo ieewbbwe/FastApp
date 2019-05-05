@@ -77,7 +77,8 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".demo.net.NetCacheActivity" />
-        <activity android:name=".demo.core.utiles.CommentUtileActivity"></activity>
+        <activity android:name=".demo.core.utiles.CommentUtileActivity" />
+        <activity android:name=".demo.core.OtherDemoActivity"></activity>
     </application>
 
 </manifest>

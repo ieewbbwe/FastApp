@@ -50,6 +50,7 @@ public class CoreDemoActivity extends BaseActivity {
     @Override
     protected void initComp() {
         unbinder = ButterKnife.bind(this);
+
         mAdapter = new CoreAdapter(this);
         mLRecyclerViewAdapter = new LRecyclerViewAdapter(mAdapter);
         mCoreDemoLrv.setAdapter(mLRecyclerViewAdapter);
